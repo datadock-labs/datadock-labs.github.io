@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Search Tables for Confluence – Documentation</title>
+<style>body{max-width:760px;margin:40px auto;padding:0 20px;font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif;color:#0f172a}h1{font-size:28px}h2{font-size:19px;margin-top:28px}code{background:#f1f5f9;padding:1px 4px;border-radius:4px}nav a{margin-right:14px}</style></head>
+<body><nav><a href="/">&larr; DataDock Labs</a><a href="/search-tables/">Documentation</a><a href="/search-tables/privacy.html">Privacy</a><a href="/search-tables/terms.html">Terms</a><a href="/support.html">Support</a></nav>
+<h1>Search Tables for Confluence</h1>
+<p>Show any Confluence search as a live, sortable table on your pages. Use simple filters or CQL, save searches for yourself or your team, and export results to CSV. Built on Forge and eligible for Runs on Atlassian: no data leaves Atlassian.</p>
+<h2>Install</h2>
+<p>A Confluence Cloud site admin installs the app from the Atlassian Marketplace. No setup is needed after installation.</p>
+<h2>Add a table to a page</h2>
+<ol>
+<li>Edit a page, type <code>/Search Tables</code> and press Enter. The configuration dialog opens.</li>
+<li><b>Filters</b> tab: combine text, title, spaces (including "current space"), content types, labels (any or all), "created by me", "edited by me", last modified (presets or a date range) and a parent page.</li>
+<li>Or use the <b>CQL</b> tab and write a Confluence Query Language query, for example <code>space = ENG and label = "release-notes" order by lastmodified desc</code>. Invalid queries show a clear message.</li>
+<li>Choose the columns (title, type, space, created by, created, last modified, modified by, labels), the default sort and the rows per page (10, 25, 50 or 100). A live preview shows the result.</li>
+<li>Save. Readers can sort by title, created or last modified across the whole result set and move between pages.</li>
+</ol>
+<h2>Saved searches</h2>
+<ul>
+<li>In the dialog, save the current search as <b>personal</b> (only you) or <b>shared</b> (everyone on the site).</li>
+<li>Load a saved search into any macro with one click, and keep the table in sync with later changes to a shared search.</li>
+<li>Manage all saved searches on the <b>Search Tables</b> page in the Confluence <b>Apps</b> menu.</li>
+</ul>
+<h2>Export to CSV</h2>
+<p>Use <b>Export CSV</b> above a table to download up to 2,000 rows, ready for Excel or Google Sheets. Cells that could be read as spreadsheet formulas are escaped. If your browser blocks a second automatic download from the same site, use the <b>Show CSV</b> option in the message to copy the data.</p>
+<h2>Permissions and security</h2>
+<ul>
+<li>Every search runs as the person viewing the page, so restricted content never appears for people who cannot open it.</li>
+<li>Scopes: <code>search:confluence</code> (run searches as the viewer) and <code>storage:app</code> (saved searches). No external servers and no egress.</li>
+<li>Details: <a href="/search-tables/privacy.html">privacy policy</a>.</li>
+</ul>
+<h2>FAQ</h2>
+<p><b>Why does a colleague see fewer results?</b> Results follow each viewer's permissions.</p>
+<p><b>Is there a row limit?</b> The table pages through all results; CSV export is limited to 2,000 rows.</p>
+<p><b>Does it work with Confluence Data Center?</b> No, Confluence Cloud only.</p>
+<h2>Support</h2>
+<p>Email <a href="mailto:datadocklabs@gmail.com">datadocklabs@gmail.com</a>. We reply within 2 business days (Europe/Istanbul time).</p>
+</body></html>
