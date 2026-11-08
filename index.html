@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DataDock Labs</title>
+<meta name="description" content="DataDock Labs builds small, privacy-friendly tools: the Tidy Screenshot browser extension, Apify actors and apps for Atlassian Confluence.">
+<link rel="icon" href="/assets/datadock.png">
+<style>
+:root{--ink:#0f172a;--muted:#475569;--line:#e2e8f0;--card:#fff;--bg:#f8fafc;--a:#0f766e;--b:#4338ca}
+@media (prefers-color-scheme:dark){:root{--ink:#e2e8f0;--muted:#94a3b8;--line:#1e293b;--card:#0f172a;--bg:#020617}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:var(--b)}
+@media (prefers-color-scheme:dark){a{color:#a5b4fc}}
+header{background:linear-gradient(135deg,var(--a),var(--b));color:#fff;padding:56px 16px 64px}
+.wrap{max-width:960px;margin:0 auto;padding:0 16px}
+.brand{display:flex;align-items:center;gap:14px}
+.brand img{width:52px;height:52px;border-radius:12px}
+.brand span{font-size:26px;font-weight:700}
+header p{font-size:20px;max-width:640px;margin:18px 0 0;opacity:.95}
+main{margin-top:-32px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:10px}
+.card h2{margin:0;font-size:19px}
+.card p{margin:0;color:var(--muted)}
+.tag{display:inline-block;font-size:12px;font-weight:600;letter-spacing:.3px;text-transform:uppercase;color:var(--a);background:rgba(15,118,110,.1);border-radius:999px;padding:3px 10px;width:max-content}
+.card .links{margin-top:auto;display:flex;flex-wrap:wrap;gap:12px;font-size:15px}
+.row{display:flex;align-items:center;gap:12px}
+.row img{width:40px;height:40px;border-radius:9px}
+section{margin:40px 0}
+section h3{font-size:18px;margin:0 0 8px}
+footer{border-top:1px solid var(--line);padding:24px 0 40px;color:var(--muted);font-size:14px}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="brand"><img src="/assets/datadock.png" alt=""><span>DataDock Labs</span></div>
+    <p>Small, privacy-friendly tools that remove busywork: cleaner screenshots, reliable data automation and better search for teams.</p>
+  </div>
+</header>
+<main class="wrap">
+  <div class="grid">
+    <article class="card">
+      <div class="row"><img src="/assets/tidy-screenshot.png" alt=""><h2>Tidy Screenshot</h2></div>
+      <span class="tag">Browser extension</span>
+      <p>Full-page screenshots and PDFs without cookie banners, chat bubbles or ad gaps. No account, and nothing leaves your browser.</p>
+      <p>For Chrome, Edge and Firefox. Store links will appear here once the reviews are complete.</p>
+      <div class="links"><a href="/privacy/tidy-screenshot.html">Privacy policy</a><a href="/support.html">Support</a></div>
+    </article>
+    <article class="card">
+      <h2>Website Screenshot &amp; PDF API</h2>
+      <span class="tag">Apify actor</span>
+      <p>Screenshots and PDFs of any web page through an API, with cookie banners and ads removed. Batch runs or a fast HTTP endpoint.</p>
+      <div class="links"><a href="https://apify.com/datadock-labs/website-screenshot-pdf">Open on Apify</a></div>
+    </article>
+    <article class="card">
+      <h2>Google Sheets Sync</h2>
+      <span class="tag">Apify actor</span>
+      <p>Send scraped or exported data to Google Sheets: append, replace or upsert rows, or import a sheet back.</p>
+      <div class="links"><a href="https://apify.com/datadock-labs/google-sheets-sync">Open on Apify</a></div>
+    </article>
+    <article class="card">
+      <h2>Search Tables for Confluence</h2>
+      <span class="tag">Atlassian app · coming soon</span>
+      <p>Search Confluence with simple filters or CQL, show the results as a sortable table on any page, save searches and export to CSV. Runs entirely on Atlassian.</p>
+    </article>
+  </div>
+  <section>
+    <h3>Contact</h3>
+    <p>Questions, bug reports or feature ideas: <a href="mailto:datadocklabs@gmail.com">datadocklabs@gmail.com</a>. See also the <a href="/support.html">support page</a>.</p>
+  </section>
+</main>
+<footer><div class="wrap">© 2026 DataDock Labs · This site uses no cookies and no analytics.</div></footer>
+</body>
+</html>
