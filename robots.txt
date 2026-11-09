@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://datadock-labs.github.io/sitemap.xml
