@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Search Tables and Confluence's built-in report macros – what it covers today</title>
+<meta name="description" content="An honest look at what Search Tables for Confluence Cloud adds next to the built-in Content by Label, Page Properties Report and Task Report macros, mapped to open requests in Atlassian's public tracker.">
+<link rel="canonical" href="https://datadock-labs.github.io/search-tables/vs-native-macros.html">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Search Tables and Confluence's built-in report macros","about":"Confluence Cloud macros","inLanguage":"en","author":{"@type":"Organization","name":"DataDock Labs","url":"https://datadock-labs.github.io/"},"dateModified":"2026-11-10","mainEntityOfPage":"https://datadock-labs.github.io/search-tables/vs-native-macros.html"}</script>
+<style>body{max-width:820px;margin:40px auto;padding:0 20px;font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif;color:#0f172a}h1{font-size:28px}h2{font-size:19px;margin-top:28px}code{background:#f1f5f9;padding:1px 4px;border-radius:4px}nav a{margin-right:14px}table{border-collapse:collapse;width:100%;font-size:15px}th,td{border:1px solid #cbd5e1;padding:8px 10px;text-align:left;vertical-align:top}th{background:#f1f5f9}.yes{color:#166534;font-weight:600}.no{color:#9a3412;font-weight:600}.note{color:#475569;font-size:15px}</style></head>
+<body><nav><a href="/">&larr; DataDock Labs</a><a href="/search-tables/">Documentation</a><a href="/search-tables/recipes.html">Recipes</a><a href="/search-tables/privacy.html">Privacy</a><a href="/search-tables/terms.html">Terms</a><a href="/support.html">Support</a></nav>
+<h1>Search Tables and Confluence's built-in report macros</h1>
+<p>Confluence Cloud ships with report macros such as Content by Label, Page Properties Report and Task Report. They are a good fit for simple lists, and you should use them when they are enough. <a href="/search-tables/">Search Tables</a> is for the cases where you need a real table of search results: columns you choose, sorting across the whole result, paging, saved searches and CSV export.</p>
+<p>This page is deliberately plain about what Search Tables does <b>today</b> and what it does not do.</p>
+
+<h2>What Search Tables does today</h2>
+<ul>
+<li>Shows the result of any Confluence search as a table on a page: simple filters or CQL.</li>
+<li>Filters: text, title, one or more spaces (including "current space"), content types (pages, blog posts, comments, attachments, whiteboards, databases, folders), labels (any or all), created or edited by me, last modified (presets or a date range), and pages under a parent page.</li>
+<li>Columns you pick: title, type, space, created by, created, last modified, modified by, labels.</li>
+<li>Sorting by title, created or last modified across the whole result, not just the visible rows; 10, 25, 50 or 100 rows per page.</li>
+<li>Saved searches, personal or shared with the whole site, reusable in any table.</li>
+<li>CSV export of up to 2,000 rows.</li>
+<li>Every search runs with the viewer's own permissions; no data leaves Atlassian.</li>
+</ul>
+
+<h2>Open requests in Atlassian's public tracker, and where Search Tables stands</h2>
+<p class="note">The links go to Atlassian's public issue tracker. Status below is as of November 2026.</p>
+<table>
+<tr><th>Request</th><th>What people ask for</th><th>Search Tables today</th></tr>
+<tr><td><a href="https://jira.atlassian.com/browse/CONFCLOUD-32635">CONFCLOUD-32635</a></td><td>Reports that require <i>all</i> of several labels, not just any of them</td><td><span class="yes">Yes.</span> Labels can be matched as "any" or "all".</td></tr>
+<tr><td><a href="https://jira.atlassian.com/browse/CONFCLOUD-37916">CONFCLOUD-37916</a></td><td>A "current space" option in report macros</td><td><span class="yes">Yes</span> for content searches: choose "Current space", or use <code>space = currentSpace()</code>.</td></tr>
+<tr><td><a href="https://jira.atlassian.com/browse/CONFCLOUD-9005">CONFCLOUD-9005</a></td><td>A recently-updated list limited to one part of the page tree</td><td><span class="yes">Yes.</span> Use "Under page" and sort by last modified.</td></tr>
+<tr><td><a href="https://jira.atlassian.com/browse/CONFCLOUD-37239">CONFCLOUD-37239</a></td><td>Search results from more than one chosen space</td><td><span class="yes">Partly.</span> A table can cover several spaces. It is a results table, not a live search box.</td></tr>
+<tr><td><a href="https://jira.atlassian.com/browse/CONFCLOUD-43823">CONFCLOUD-43823</a></td><td>Listing pages that have no labels</td><td><span class="no">Not yet.</span> Planned.</td></tr>
+<tr><td><a href="https://jira.atlassian.com/browse/CONFCLOUD-67089">CONFCLOUD-67089</a>, <a href="https://jira.atlassian.com/browse/CONFCLOUD-78762">CONFCLOUD-78762</a></td><td>Page Properties Report: column widths, more results per page</td><td><span class="no">Not yet.</span> Search Tables does not read page properties today; showing them as columns is planned.</td></tr>
+<tr><td><a href="https://jira.atlassian.com/browse/CONFCLOUD-74397">CONFCLOUD-74397</a></td><td>Showing the page status in report macros</td><td><span class="no">Not yet.</span> Planned.</td></tr>
+<tr><td><a href="https://jira.atlassian.com/browse/CONFCLOUD-71390">CONFCLOUD-71390</a></td><td>A task report across all spaces</td><td><span class="no">No.</span> Search Tables lists content, not tasks.</td></tr>
+</table>
+
+<h2>When the built-in macros are the better choice</h2>
+<ul>
+<li>You only need a short list of pages with a label: Content by Label is simpler.</li>
+<li>You need a report built from Page Properties tables: use Page Properties Report today.</li>
+<li>You need a list of tasks: use Task Report.</li>
+</ul>
+
+<h2>Try a few searches</h2>
+<p>See <a href="/search-tables/recipes.html">10 ready-to-use searches</a>, or read the <a href="/search-tables/">documentation</a>. Missing something? Tell us at <a href="mailto:datadocklabs@gmail.com">datadocklabs@gmail.com</a>; requests decide what gets built next.</p>
+</body></html>

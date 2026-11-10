@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Moving a CQL search macro from a Connect app to Forge – Search Tables</title>
+<meta name="description" content="Step-by-step: find the Confluence pages that use an old Connect-based search macro, rebuild the tables with Search Tables (a Forge app), and keep the queries as shared saved searches. Connect support ends on 31 January 2027.">
+<link rel="canonical" href="https://datadock-labs.github.io/search-tables/migrate-from-connect.html">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"Move a CQL search macro from a Connect app to Search Tables","inLanguage":"en","step":[{"@type":"HowToStep","name":"List the pages that use the old macro"},{"@type":"HowToStep","name":"Rebuild each table with Search Tables"},{"@type":"HowToStep","name":"Save recurring queries as shared saved searches"},{"@type":"HowToStep","name":"Remove the old macro and uninstall the old app"}]}</script>
+<style>body{max-width:760px;margin:40px auto;padding:0 20px;font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif;color:#0f172a}h1{font-size:28px}h2{font-size:19px;margin-top:28px}code{background:#f1f5f9;padding:1px 4px;border-radius:4px}pre{background:#f1f5f9;padding:10px 12px;border-radius:6px;overflow-x:auto}pre code{background:none;padding:0}nav a{margin-right:14px}.note{color:#475569;font-size:15px}</style></head>
+<body><nav><a href="/">&larr; DataDock Labs</a><a href="/search-tables/">Documentation</a><a href="/search-tables/recipes.html">Recipes</a><a href="/search-tables/privacy.html">Privacy</a><a href="/search-tables/terms.html">Terms</a><a href="/support.html">Support</a></nav>
+<h1>Moving a CQL search macro from a Connect app to Forge</h1>
+<p>Atlassian has announced that support for the Connect app framework ends on <b>31 January 2027</b> (<a href="https://community.developer.atlassian.com/t/connect-end-of-support-extended-to-january-31-2027/102002">announcement</a>). After that date Connect apps are no longer maintained by the platform, and Atlassian warns that breakages will increase. If your Confluence pages rely on a Connect-based macro that embeds search results, this guide shows how to move those tables to <a href="/search-tables/">Search Tables</a>, which is built on Forge.</p>
+<p class="note">Not sure whether an app is on Connect? Its Marketplace listing and the app's entry in your site's app management page show how it is hosted. An app that already "Runs on Atlassian" or is listed as a Forge app is not affected.</p>
+
+<h2>Step 1 – List the pages that use the old macro</h2>
+<p>You need the name of the old macro as Confluence stores it. Take one page that uses it, note its page ID (the number in the page URL) and open <code>https://YOUR-SITE.atlassian.net/wiki/plugins/viewstorage/viewpagestorage.action?pageId=PAGE_ID</code>. In the text that appears, look for the macro's <code>ac:name="…"</code> value. (The same view is available from the page's <b>•••</b> menu as <b>View storage format</b> on sites that show it.)</p>
+<p>Then install Search Tables, add it to a scratch page, open the <b>CQL</b> tab and run:</p>
+<pre><code>macro = "old-macro-name" ORDER BY title</code></pre>
+<p>The result is your migration checklist; add the Space column to see where each page lives. Press <b>Export CSV</b> to keep it in a spreadsheet. If the query returns nothing, the macro name is probably different from what you typed; as a fallback, search for a word that all those pages share.</p>
+
+<h2>Step 2 – Rebuild each table</h2>
+<ol>
+<li>Edit the page, type <code>/Search Tables</code> and press Enter.</li>
+<li>If the old macro used a CQL query, paste the same query into the <b>CQL</b> tab. Otherwise rebuild it with the <b>Filters</b> tab (spaces, labels, content types, dates, parent page).</li>
+<li>Pick the columns, the default sort and the rows per page. The preview shows the live result.</li>
+<li>Save, compare with the old table, then remove the old macro from the page.</li>
+</ol>
+
+<h2>Step 3 – Keep recurring queries as shared saved searches</h2>
+<p>If the same query appears on many pages, save it once as a <b>shared</b> saved search and load it into the other tables. When the shared search changes, synced tables follow.</p>
+
+<h2>Step 4 – Finish</h2>
+<p>When every page on the checklist is done, run the query from step 1 again. An empty result means no page uses the old macro any more, and the old app can be uninstalled.</p>
+
+<h2>What to expect</h2>
+<ul>
+<li>Search Tables shows results as a table with sorting, paging and CSV export. Layout and options will not be identical to your old macro.</li>
+<li>Every search runs with the permissions of the person viewing the page.</li>
+<li>The app stores only saved searches (name, query, owner). It uses no external servers, and no data leaves Atlassian.</li>
+<li>If your old macro had a feature you depend on and you cannot find it here, tell us at <a href="mailto:datadocklabs@gmail.com">datadocklabs@gmail.com</a> before you migrate.</li>
+</ul>
+<p>More examples: <a href="/search-tables/recipes.html">10 ready-to-use searches</a>.</p>
+</body></html>
