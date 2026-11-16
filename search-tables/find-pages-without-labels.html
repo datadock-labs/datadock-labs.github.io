@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to find Confluence pages that have no labels – Search Tables</title>
+<meta name="description" content="CQL cannot search for an empty label, and Content by Label cannot list unlabelled pages. Here is a reliable workaround for Confluence Cloud: a table with a Labels column, exported to CSV and filtered in a spreadsheet.">
+<link rel="canonical" href="https://datadock-labs.github.io/search-tables/find-pages-without-labels.html">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"How to find Confluence pages that have no labels","about":"Confluence Cloud labels, CQL","inLanguage":"en","author":{"@type":"Organization","name":"DataDock Labs","url":"https://datadock-labs.github.io/"},"dateModified":"2026-11-16","mainEntityOfPage":"https://datadock-labs.github.io/search-tables/find-pages-without-labels.html"}</script>
+<style>body{max-width:760px;margin:40px auto;padding:0 20px;font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif;color:#0f172a}h1{font-size:28px}h2{font-size:19px;margin-top:28px}code{background:#f1f5f9;padding:1px 4px;border-radius:4px}pre{background:#f1f5f9;padding:10px 12px;border-radius:6px;overflow-x:auto}pre code{background:none;padding:0}nav{display:flex;flex-wrap:wrap}nav a{margin-right:14px}.note{color:#475569;font-size:15px}.status{background:#fefce8;border:1px solid #fde68a;padding:8px 12px;border-radius:6px;font-size:15px}.wrap{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:15px}th,td{border:1px solid #cbd5e1;padding:6px 8px;text-align:left;vertical-align:top}th{background:#f1f5f9}</style></head>
+<body><nav><a href="/">&larr; DataDock Labs</a><a href="/search-tables/">Documentation</a><a href="/search-tables/recipes.html">Recipes</a><a href="/search-tables/privacy.html">Privacy</a><a href="/search-tables/terms.html">Terms</a><a href="/support.html">Support</a></nav>
+<h1>How to find Confluence pages that have no labels</h1>
+<p><b>Short answer:</b> Confluence's search language cannot do it directly. CQL has no "label is empty" test (<code>label IS EMPTY</code> and <code>label is null</code> both fail with "Could not parse cql"), and the Content by Label macro only lists pages that <i>do</i> have a label. The dependable workaround is to list every page of the space together with its labels, export that list to CSV and filter the empty Labels cells in Excel or Google Sheets. With <a href="/search-tables/">Search Tables</a> that takes about a minute.</p>
+<p class="status">Search Tables is a new Confluence Cloud app and is coming soon to the Atlassian Marketplace (it is in Atlassian's review now). The steps below describe what the app does today. A direct "pages without labels" option is planned for a later version; it is not available yet.</p>
+
+<h2>The query</h2>
+<p>All pages of one space, sorted by title. Replace <code>ENG</code> with your space key.</p>
+<pre><code>type = page AND space = "ENG" ORDER BY title</code></pre>
+<p>If you only care about pages that are missing one particular label, CQL can do that directly:</p>
+<pre><code>type = page AND space = "ENG" AND label not in ("reviewed") ORDER BY title</code></pre>
+
+<h2>Step by step</h2>
+<ol>
+<li>Edit any page, type <code>/Search Tables</code> and open the <b>CQL</b> tab. (Or use the <b>Filters</b> tab: pick the space and the content type <i>Page</i>.)</li>
+<li>Paste the first query and choose the columns <b>Title</b>, <b>Labels</b>, <b>Created by</b> and <b>Last modified</b>.</li>
+<li>Save, then press <b>Export CSV</b> above the table. The file has one row per page, with the page URL next to the title and the labels as a comma-separated cell.</li>
+<li>Open the file in Excel or Google Sheets, turn on a filter for the <b>Labels</b> column and choose <i>(Blanks)</i>. What is left is your list of unlabelled pages, each with a link to open and fix it.</li>
+</ol>
+<p>Already in the table, you can scan the Labels column by eye: unlabelled pages show an empty cell.</p>
+
+<h2>What you get</h2>
+<p class="note">Example output with sample content. On our own test space the same steps found 9 unlabelled pages out of 153.</p>
+<div class="wrap"><table>
+<tr><th>Title</th><th>URL</th><th>Labels</th><th>Created by</th><th>Last modified (UTC)</th></tr>
+<tr><td>Architecture overview</td><td>https://your-site.atlassian.net/wiki/spaces/ENG/pages/…</td><td>architecture</td><td>Ana Silva</td><td>2026-10-02T09:14:00.000Z</td></tr>
+<tr><td>Onboarding flow notes</td><td>https://your-site.atlassian.net/wiki/spaces/ENG/pages/…</td><td></td><td>Tom Reed</td><td>2026-11-03T15:40:00.000Z</td></tr>
+<tr><td>Search relevance ideas</td><td>https://your-site.atlassian.net/wiki/spaces/ENG/pages/…</td><td></td><td>Ana Silva</td><td>2026-11-11T08:02:00.000Z</td></tr>
+</table></div>
+
+<h2>Compared with what Confluence offers built in</h2>
+<ul>
+<li><b>Content by Label:</b> lists pages that have labels; it cannot list pages without any. This is an open request in Atlassian's public tracker: <a href="https://jira.atlassian.com/browse/CONFCLOUD-43823">CONFCLOUD-43823</a>.</li>
+<li><b>CQL / advanced search:</b> cannot test for an empty field (<a href="https://jira.atlassian.com/browse/CONFCLOUD-76379">CONFCLOUD-76379</a>), so no single query returns only unlabelled pages.</li>
+<li><b>Search Tables today:</b> gives you the full list with a Labels column and a CSV export, so the last step happens in a spreadsheet. It is a workaround, not a one-click report.</li>
+</ul>
+
+<h2>FAQ</h2>
+<p><b>How many pages can I export at once?</b> Up to 2,000 rows per export. For bigger spaces, split the list, for example by date: add <code>AND created &lt; "2025-01-01"</code> for one file and <code>AND created &gt;= "2025-01-01"</code> for the next.</p>
+<p><b>Can I sort the table by the Labels column?</b> No. The table sorts by title, created or last modified across the whole result. Use the spreadsheet for label filtering.</p>
+<p><b>Will people see pages they cannot open?</b> No. The search runs with the viewer's permissions, so the list (and the CSV) only contains pages that person can see.</p>
+<p><b>Does this work for blog posts too?</b> Yes. Use <code>type in (page, blogpost)</code>.</p>
+
+<p>Related: <a href="/search-tables/export-confluence-search-to-csv.html">exporting Confluence search results to CSV</a> · <a href="/search-tables/recipes.html">10 ready-to-use searches</a>. Questions? Email <a href="mailto:datadocklabs@gmail.com">datadocklabs@gmail.com</a>.</p>
+</body></html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to list every Confluence page where you are @mentioned – Search Tables</title>
+<meta name="description" content="Confluence Cloud has no built-in list of the pages and comments that @mention you. One CQL query, mention = currentUser(), gives you that list as a live table on a page.">
+<link rel="canonical" href="https://datadock-labs.github.io/search-tables/find-pages-where-you-are-mentioned.html">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"How to list every Confluence page where you are @mentioned","about":"Confluence Cloud search, CQL, mentions","inLanguage":"en","author":{"@type":"Organization","name":"DataDock Labs","url":"https://datadock-labs.github.io/"},"dateModified":"2026-11-16","mainEntityOfPage":"https://datadock-labs.github.io/search-tables/find-pages-where-you-are-mentioned.html"}</script>
+<style>body{max-width:760px;margin:40px auto;padding:0 20px;font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif;color:#0f172a}h1{font-size:28px}h2{font-size:19px;margin-top:28px}code{background:#f1f5f9;padding:1px 4px;border-radius:4px}pre{background:#f1f5f9;padding:10px 12px;border-radius:6px;overflow-x:auto}pre code{background:none;padding:0}nav{display:flex;flex-wrap:wrap}nav a{margin-right:14px}.note{color:#475569;font-size:15px}.status{background:#fefce8;border:1px solid #fde68a;padding:8px 12px;border-radius:6px;font-size:15px}.wrap{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:15px}th,td{border:1px solid #cbd5e1;padding:6px 8px;text-align:left;vertical-align:top}th{background:#f1f5f9}</style></head>
+<body><nav><a href="/">&larr; DataDock Labs</a><a href="/search-tables/">Documentation</a><a href="/search-tables/recipes.html">Recipes</a><a href="/search-tables/privacy.html">Privacy</a><a href="/search-tables/terms.html">Terms</a><a href="/support.html">Support</a></nav>
+<h1>How to list every Confluence page where you are @mentioned</h1>
+<p><b>Short answer:</b> Confluence Cloud has no page or macro that lists everything that mentions you, but its search language can find it. The CQL query <code>mention = currentUser()</code> returns every page, blog post and comment that @mentions the person running the search. Put that query in a <a href="/search-tables/">Search Tables</a> macro and each reader of the page sees their own list of mentions, newest first.</p>
+<p class="status">Search Tables is a new Confluence Cloud app and is coming soon to the Atlassian Marketplace (it is in Atlassian's review now). The steps below describe what the app does today.</p>
+
+<h2>The query</h2>
+<pre><code>type in (page, blogpost, comment) AND mention = currentUser() ORDER BY lastmodified DESC</code></pre>
+<p>To list the mentions of one specific person instead of the reader, use their Atlassian account ID (the long ID at the end of their profile URL; the one below is only an example):</p>
+<pre><code>mention = "5b10a2844c20165700ede21g" ORDER BY lastmodified DESC</code></pre>
+<p>Narrow it down to one space or to the last month:</p>
+<pre><code>mention = currentUser() AND space = currentSpace() AND lastmodified &gt;= now("-30d") ORDER BY lastmodified DESC</code></pre>
+
+<h2>Step by step</h2>
+<ol>
+<li>Edit the page where the list should live (a personal home page or a team dashboard works well) and type <code>/Search Tables</code>.</li>
+<li>Open the <b>CQL</b> tab and paste the first query above.</li>
+<li>Under columns pick <b>Title</b>, <b>Type</b>, <b>Space</b>, <b>Modified by</b> and <b>Last modified</b>. The Type column tells pages, blog posts and comments apart.</li>
+<li>Choose 25 or 50 rows per page, check the live preview, and save.</li>
+</ol>
+<p>Because the query uses <code>currentUser()</code>, one table serves everybody: each person who opens the page sees the content that mentions <i>them</i>.</p>
+
+<h2>What the table looks like</h2>
+<p class="note">Example output with sample content.</p>
+<div class="wrap"><table>
+<tr><th>Title</th><th>Type</th><th>Space</th><th>Modified by</th><th>Last modified</th></tr>
+<tr><td>Data export API: open questions</td><td>Page</td><td>Engineering</td><td>Ana Silva</td><td>Nov 14, 2026, 10:21 AM</td></tr>
+<tr><td>Re: Q4 launch checklist</td><td>Comment</td><td>Marketing</td><td>Tom Reed</td><td>Nov 12, 2026, 4:05 PM</td></tr>
+<tr><td>Accessibility audit notes</td><td>Page</td><td>Engineering</td><td>Ana Silva</td><td>Nov 9, 2026, 9:47 AM</td></tr>
+</table></div>
+<p class="note">We ran these queries on a Confluence Cloud test site in November 2026. Mentions in the page body and in comments were both found. A brand-new mention can take a short while (about half a minute in our test) to appear, because Confluence has to index it first.</p>
+
+<h2>Compared with what Confluence offers built in</h2>
+<ul>
+<li><b>Notifications:</b> Confluence notifies you when someone mentions you, which is fine for new mentions. It is not a list you can sort, filter by space, or keep on a page, and older mentions are hard to find again.</li>
+<li><b>Report macros:</b> none of the built-in macros (Content by Label, Page Properties Report, Recently Updated) can filter by mention. A request for such a list is open in Atlassian's public tracker: <a href="https://jira.atlassian.com/browse/CONFCLOUD-71883">CONFCLOUD-71883</a>, and a related one for a "content by mentioned user" macro: <a href="https://jira.atlassian.com/browse/CONFCLOUD-33832">CONFCLOUD-33832</a>.</li>
+<li><b>Confluence search page:</b> you can type the same CQL into advanced search, but you get a search result page, not a table that lives on a page and stays up to date.</li>
+</ul>
+
+<h2>FAQ</h2>
+<p><b>Will a colleague see the pages that mention me?</b> No. With <code>currentUser()</code> each reader sees their own mentions. Every search also runs with the reader's own permissions, so restricted pages never appear for people who cannot open them.</p>
+<p><b>Does it find mentions of a group or a team?</b> No. The <code>mention</code> field matches people. Mentions of groups are a separate open request (<a href="https://jira.atlassian.com/browse/CONFCLOUD-23015">CONFCLOUD-23015</a>).</p>
+<p><b>Can I get this list into Excel?</b> Yes. Press <b>Export CSV</b> above the table (up to 2,000 rows). See <a href="/search-tables/export-confluence-search-to-csv.html">exporting search results to CSV</a>.</p>
+<p><b>Why does a comment show up as "Re: page title"?</b> That is how Confluence names comments in search results, so you can see which page the comment is on. Leave <code>comment</code> out of the query if you only want pages and blog posts.</p>
+
+<p>More searches: <a href="/search-tables/recipes.html">10 ready-to-use searches</a>. Questions? Email <a href="mailto:datadocklabs@gmail.com">datadocklabs@gmail.com</a>.</p>
+</body></html>

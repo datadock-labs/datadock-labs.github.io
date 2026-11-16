@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to list pages with a label but leave out the current page – Search Tables</title>
+<meta name="description" content="Content by Label in Confluence Cloud always lists the page it sits on. With CQL, id != currentContent() removes the current page from a label list, so related pages show only the others.">
+<link rel="canonical" href="https://datadock-labs.github.io/search-tables/content-by-label-exclude-current-page.html">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"How to list pages with a label but leave out the current page","about":"Confluence Cloud labels, CQL, Content by Label","inLanguage":"en","author":{"@type":"Organization","name":"DataDock Labs","url":"https://datadock-labs.github.io/"},"dateModified":"2026-11-16","mainEntityOfPage":"https://datadock-labs.github.io/search-tables/content-by-label-exclude-current-page.html"}</script>
+<style>body{max-width:760px;margin:40px auto;padding:0 20px;font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif;color:#0f172a}h1{font-size:28px}h2{font-size:19px;margin-top:28px}code{background:#f1f5f9;padding:1px 4px;border-radius:4px}pre{background:#f1f5f9;padding:10px 12px;border-radius:6px;overflow-x:auto}pre code{background:none;padding:0}nav{display:flex;flex-wrap:wrap}nav a{margin-right:14px}.note{color:#475569;font-size:15px}.status{background:#fefce8;border:1px solid #fde68a;padding:8px 12px;border-radius:6px;font-size:15px}.wrap{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:15px}th,td{border:1px solid #cbd5e1;padding:6px 8px;text-align:left;vertical-align:top}th{background:#f1f5f9}</style></head>
+<body><nav><a href="/">&larr; DataDock Labs</a><a href="/search-tables/">Documentation</a><a href="/search-tables/recipes.html">Recipes</a><a href="/search-tables/privacy.html">Privacy</a><a href="/search-tables/terms.html">Terms</a><a href="/support.html">Support</a></nav>
+<h1>How to list pages with a label but leave out the current page</h1>
+<p><b>Short answer:</b> add <code>AND id != currentContent()</code> to a label search. <code>currentContent()</code> means "the page this table is on", so a "related pages" list built from a label no longer shows the page you are already reading. The built-in Content by Label macro has no such option; in a <a href="/search-tables/">Search Tables</a> macro it is one extra condition in the CQL tab.</p>
+<p class="status">Search Tables is a new Confluence Cloud app and is coming soon to the Atlassian Marketplace (it is in Atlassian's review now). The steps below describe what the app does today.</p>
+
+<h2>The query</h2>
+<p>Other pages with the label <code>onboarding</code>, newest first:</p>
+<pre><code>type = page AND label = "onboarding" AND id != currentContent() ORDER BY created DESC</code></pre>
+<p>Only in this space, and matching two labels at once:</p>
+<pre><code>type = page AND space = currentSpace() AND label = "onboarding" AND label = "checklist" AND id != currentContent() ORDER BY title</code></pre>
+<p>Leave out a different, fixed page by its ID (the number in the page URL):</p>
+<pre><code>type = page AND label = "onboarding" AND id != 123456</code></pre>
+
+<h2>Step by step</h2>
+<ol>
+<li>Edit the page, type <code>/Search Tables</code> and switch to the <b>CQL</b> tab. (The Filters tab can build the label part, but excluding a page needs CQL.)</li>
+<li>Paste the first query and change the label name.</li>
+<li>For a compact "related pages" box choose only the <b>Title</b> and <b>Last modified</b> columns and 10 rows per page.</li>
+<li>Save. If the page is used as a template for new pages with the same label, every copy shows the others but not itself.</li>
+</ol>
+
+<h2>What the table looks like</h2>
+<p class="note">Example output with sample content, placed on the page "Onboarding: week one".</p>
+<div class="wrap"><table>
+<tr><th>Title</th><th>Last modified</th></tr>
+<tr><td>Onboarding: accounts and access</td><td>Nov 13, 2026, 2:10 PM</td></tr>
+<tr><td>Onboarding: who to ask</td><td>Nov 6, 2026, 11:32 AM</td></tr>
+<tr><td>Onboarding: first project</td><td>Oct 28, 2026, 9:05 AM</td></tr>
+</table></div>
+<p class="note">Checked on a Confluence Cloud test site in November 2026: a label shared by 120 pages returned 119 results with <code>id != currentContent()</code>, and the current page was not among them.</p>
+
+<h2>Compared with what Confluence offers built in</h2>
+<ul>
+<li><b>Content by Label:</b> simple and fine when listing the current page does not bother you. It cannot leave the current page out; that is an open request in Atlassian's public tracker: <a href="https://jira.atlassian.com/browse/CONFCLOUD-5245">CONFCLOUD-5245</a>.</li>
+<li><b>Search Tables:</b> needs one line of CQL, and in return you choose the columns, sort across the whole result and can export the list to CSV.</li>
+</ul>
+
+<h2>FAQ</h2>
+<p><b>Does <code>currentContent()</code> work everywhere?</b> It works in a table placed on a page or blog post, because the table knows which page it is on. On the app's own Search Tables page in the Apps menu there is no current page, so use a fixed <code>id != 123456</code> there.</p>
+<p><b>Can I leave out several pages?</b> Yes: <code>id not in (123456, 234567)</code>.</p>
+<p><b>Can I also leave out child pages?</b> Yes, if they sit under one parent: add <code>AND ancestor != 123456</code> with the parent page's ID. Test it in the live preview before saving.</p>
+<p><b>Will readers see pages they cannot open?</b> No. Every search runs with the reader's own permissions.</p>
+
+<p>More: <a href="/search-tables/recipes.html">10 ready-to-use searches</a> · <a href="/search-tables/vs-native-macros.html">Built-in report macros and open requests</a>. Questions? Email <a href="mailto:datadocklabs@gmail.com">datadocklabs@gmail.com</a>.</p>
+</body></html>
