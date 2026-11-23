@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to list all Confluence pages you created – Search Tables</title>
+<meta name="description" content="Confluence Cloud search can mix up pages you created with pages you only edited. CQL creator = currentUser() lists exactly the pages you created, and in a Search Tables macro each viewer sees their own list.">
+<link rel="canonical" href="https://datadock-labs.github.io/search-tables/find-pages-i-created.html">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "How to list all Confluence pages you created", "about": "Confluence Cloud, CQL creator, currentUser()", "inLanguage": "en", "author": {"@type": "Organization", "name": "DataDock Labs", "url": "https://datadock-labs.github.io/"}, "dateModified": "2026-11-23", "mainEntityOfPage": "https://datadock-labs.github.io/search-tables/find-pages-i-created.html"}</script>
+<style>body{max-width:760px;margin:40px auto;padding:0 20px;font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif;color:#0f172a}h1{font-size:28px}h2{font-size:19px;margin-top:28px}code{background:#f1f5f9;padding:1px 4px;border-radius:4px}pre{background:#f1f5f9;padding:10px 12px;border-radius:6px;overflow-x:auto}pre code{background:none;padding:0}nav{display:flex;flex-wrap:wrap}nav a{margin-right:14px}.note{color:#475569;font-size:15px}.status{background:#fefce8;border:1px solid #fde68a;padding:8px 12px;border-radius:6px;font-size:15px}.wrap{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:15px}th,td{border:1px solid #cbd5e1;padding:6px 8px;text-align:left;vertical-align:top}th{background:#f1f5f9}</style></head>
+<body><nav><a href="/">&larr; DataDock Labs</a><a href="/search-tables/">Documentation</a><a href="/search-tables/recipes.html">Recipes</a><a href="/search-tables/privacy.html">Privacy</a><a href="/search-tables/terms.html">Terms</a><a href="/support.html">Support</a></nav>
+<h1>How to list all Confluence pages you created</h1>
+<p class="status">Search Tables is a new Confluence Cloud app and is coming soon to the Atlassian Marketplace (it is in Atlassian's review now). The steps below describe what the app does today.</p>
+<p><b>Short answer:</b> Use CQL: <code>type = page AND creator = currentUser()</code>. <code>creator</code> is the person who created the page; <code>contributor</code> is anyone who edited it, which is why some searches for "my pages" also return pages you only touched. In a <a href="/search-tables/">Search Tables</a> macro, <code>currentUser()</code> means <i>the person viewing the page</i>, so one table on a team page shows every reader their own pages.</p>
+
+<h2>The query</h2>
+<pre><code>type = page AND creator = currentUser() ORDER BY created DESC</code></pre>
+<p>Pages you edited, created or not: <code>type = page AND contributor = currentUser() ORDER BY lastmodified DESC</code>. Add <code>AND space = "ENG"</code> to stay in one space, or use <code>type in (page, blogpost)</code> to include your blog posts.</p>
+
+<h2>Step by step</h2>
+<ol>
+<li>Edit a page (your personal space's overview works well), type <code>/Search Tables</code> and stay on the <b>Filters</b> tab.</li>
+<li>Set <b>Created by</b> to <i>Me</i>, <b>Content types</b> to <i>Page</i>, and <b>Sort by</b> to <i>Created (newest first)</i>. For pages you edited, set <b>Edited by</b> to <i>Me</i> instead.</li>
+<li>Choose the columns <b>Title</b>, <b>Space</b>, <b>Created</b>, <b>Last modified</b> and <b>Modified by</b>.</li>
+<li>Save. Press <b>Export CSV</b> if you need the list elsewhere, for example before handing over your pages when you change teams.</li>
+</ol>
+
+<h2>What you get</h2>
+<p class="note">Real output from our test site, 17 Nov 2026: first 3 of 213 rows (the newest pages are our own test pages). The test account&#39;s name is shown as &ldquo;Demo user&rdquo;; dates are shortened to YYYY-MM-DD.</p>
+<div class="wrap"><table>
+<tr><th>Title</th><th>Space</th><th>Created</th><th>Last modified</th><th>Modified by</th></tr>
+<tr><td>ST23 Check: pages modified between two dates</td><td>Engineering</td><td>2026-11-17</td><td>2026-11-17</td><td>Demo user</td></tr>
+<tr><td>ST23 Check: pages under a page</td><td>Engineering</td><td>2026-11-17</td><td>2026-11-17</td><td>Demo user</td></tr>
+<tr><td>ST23 Check: pages I created</td><td>Engineering</td><td>2026-11-17</td><td>2026-11-17</td><td>Demo user</td></tr>
+</table></div>
+
+<h2>Compared with what Confluence offers built in</h2>
+<ul>
+<li><b>Search with the contributor filter:</b> matches pages a person created <i>or edited</i>, so it is not a clean "created by me" list.</li>
+<li><b>Content by User macro:</b> lists everything one named person created (including comments and spaces) and is tied to the legacy editor.</li>
+<li><b>Search Tables:</b> created or edited, pages only or any type, for whoever is viewing; sortable and exportable.</li>
+</ul>
+
+<h2>FAQ</h2>
+<p><b>Can I list the pages of a colleague instead of mine?</b> Yes, on the <b>CQL</b> tab: <code>creator = "&lt;account ID&gt;"</code>. The <b>Filters</b> tab only offers <i>Anyone</i> and <i>Me</i>.</p>
+<p><b>Will a colleague see my private pages in their table?</b> No. The search runs with each viewer's own permissions.</p>
+<p><b>How many rows can I export?</b> Up to 2,000 per export.</p>
+
+<p>Related: <a href="/search-tables/export-confluence-search-to-csv.html">exporting Confluence search results to CSV</a> · <a href="/search-tables/recipes.html">10 ready-to-use searches</a>. Questions? Email <a href="mailto:datadocklabs@gmail.com">datadocklabs@gmail.com</a>. We aim to reply within 72 hours. Support hours: Monday–Friday, 09:00–17:00 Istanbul time (UTC+03:00).</p>
+</body></html>

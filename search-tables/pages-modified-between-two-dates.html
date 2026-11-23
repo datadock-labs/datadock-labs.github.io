@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to list Confluence pages modified between two dates – Search Tables</title>
+<meta name="description" content="Recently Updated cannot be set to a date range. CQL lastmodified &gt;= and &lt; does it, and Search Tables has a Custom range filter: a table of the pages last changed in your period, with who changed them, exported to CSV.">
+<link rel="canonical" href="https://datadock-labs.github.io/search-tables/pages-modified-between-two-dates.html">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "How to list Confluence pages modified between two dates", "about": "Confluence Cloud, CQL lastmodified date range", "inLanguage": "en", "author": {"@type": "Organization", "name": "DataDock Labs", "url": "https://datadock-labs.github.io/"}, "dateModified": "2026-11-23", "mainEntityOfPage": "https://datadock-labs.github.io/search-tables/pages-modified-between-two-dates.html"}</script>
+<style>body{max-width:760px;margin:40px auto;padding:0 20px;font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif;color:#0f172a}h1{font-size:28px}h2{font-size:19px;margin-top:28px}code{background:#f1f5f9;padding:1px 4px;border-radius:4px}pre{background:#f1f5f9;padding:10px 12px;border-radius:6px;overflow-x:auto}pre code{background:none;padding:0}nav{display:flex;flex-wrap:wrap}nav a{margin-right:14px}.note{color:#475569;font-size:15px}.status{background:#fefce8;border:1px solid #fde68a;padding:8px 12px;border-radius:6px;font-size:15px}.wrap{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:15px}th,td{border:1px solid #cbd5e1;padding:6px 8px;text-align:left;vertical-align:top}th{background:#f1f5f9}</style></head>
+<body><nav><a href="/">&larr; DataDock Labs</a><a href="/search-tables/">Documentation</a><a href="/search-tables/recipes.html">Recipes</a><a href="/search-tables/privacy.html">Privacy</a><a href="/search-tables/terms.html">Terms</a><a href="/support.html">Support</a></nav>
+<h1>How to list Confluence pages modified between two dates</h1>
+<p class="status">Search Tables is a new Confluence Cloud app and is coming soon to the Atlassian Marketplace (it is in Atlassian's review now). The steps below describe what the app does today.</p>
+<p><b>Short answer:</b> CQL accepts dates: <code>lastmodified &gt;= "2026-10-01" AND lastmodified &lt; "2026-11-01"</code> returns the pages last changed in October. The Recently Updated macro has no date setting. In <a href="/search-tables/">Search Tables</a> you do not even need to type the query: choose <i>Custom range</i> under <b>Last modified</b> and pick the two dates.</p>
+
+<h2>The query</h2>
+<pre><code>type = page AND space = "ENG" AND lastmodified &gt;= "2026-10-01" AND lastmodified &lt; "2026-11-01" ORDER BY lastmodified DESC</code></pre>
+<p>Use <code>created</code> instead of <code>lastmodified</code> for pages <i>created</i> in the period.</p>
+
+<h2>Step by step</h2>
+<ol>
+<li>Edit a page, type <code>/Search Tables</code> and stay on the <b>Filters</b> tab.</li>
+<li>Pick the space under <b>Spaces</b> and <i>Page</i> under <b>Content types</b>.</li>
+<li>Set <b>Last modified</b> to <i>Custom range</i> and fill in <b>From</b> and <b>To</b>. Both days are included.</li>
+<li>Choose the columns <b>Title</b>, <b>Last modified</b>, <b>Modified by</b> and <b>Created</b>, then save. Press <b>Export CSV</b> for an audit or a monthly report.</li>
+</ol>
+
+<h2>What you get</h2>
+<p class="note">Real output from our test site, 17 Nov 2026, with From 2026-11-10 and To 2026-11-12: first 3 of 16 rows. The table shows the columns in its fixed order. The test account&#39;s name is shown as &ldquo;Demo user&rdquo;; dates are shortened to YYYY-MM-DD.</p>
+<div class="wrap"><table>
+<tr><th>Title</th><th>Created</th><th>Last modified</th><th>Modified by</th></tr>
+<tr><td>Native PPR with ancestor CQL (comparison)</td><td>2026-11-12</td><td>2026-11-12</td><td>Demo user</td></tr>
+<tr><td>Native Page Properties Report (comparison)</td><td>2026-11-12</td><td>2026-11-12</td><td>Demo user</td></tr>
+<tr><td>Fjord: data export API</td><td>2026-11-12</td><td>2026-11-12</td><td>Demo user</td></tr>
+</table></div>
+
+<h2>Compared with what Confluence offers built in</h2>
+<ul>
+<li><b>Recently Updated:</b> the latest changes only; no start or end date.</li>
+<li><b>Advanced search:</b> "last modified" offers fixed recent periods; the result cannot be kept on a page or exported.</li>
+<li><b>Search Tables:</b> any range, saved on the page, sortable and exportable.</li>
+</ul>
+
+<h2>FAQ</h2>
+<p><b>A page was edited in October and again in November. Is it in the October list?</b> No. <code>lastmodified</code> is the date of the latest edit, so the page shows up in November's list. CQL has no "edited at any time during" field.</p>
+<p><b>Can I make it "the last 30 days" instead of fixed dates?</b> Yes: choose <i>Last 30 days</i> under <b>Last modified</b>; the table then moves with the calendar.</p>
+<p><b>How many rows can I export?</b> Up to 2,000 per export.</p>
+
+<p>Related: <a href="/search-tables/export-confluence-search-to-csv.html">exporting Confluence search results to CSV</a> · <a href="/search-tables/recipes.html">10 ready-to-use searches</a>. Questions? Email <a href="mailto:datadocklabs@gmail.com">datadocklabs@gmail.com</a>. We aim to reply within 72 hours. Support hours: Monday–Friday, 09:00–17:00 Istanbul time (UTC+03:00).</p>
+</body></html>
