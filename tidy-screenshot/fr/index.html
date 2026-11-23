@@ -100,8 +100,8 @@ h2.caps{font-size:14px;letter-spacing:.08em;color:var(--muted);margin:0 0 6px}
   <div class="wrap">
     <nav><a href="/">&larr; DataDock Labs</a></nav>
     <div class="hero"><img src="/assets/tidy-screenshot.png" alt=""><h1>Capture de page entière</h1></div>
-    <p class="lead">Des captures d’écran nettes de n’importe quelle page web en un clic : la page entière, ce que vous voyez ou seulement la partie que vous sélectionnez.</p>
-    <p class="lead">Presque chaque page vous accueille avec un bandeau de cookies, une bulle de chat et un emplacement publicitaire vide. Tidy Screenshot masque tout cela avant la capture, pour que votre capture montre la page elle-même, pas les fenêtres surgissantes.</p>
+    <p class="lead">Des captures d&#x27;écran propres de n&#x27;importe quelle page web en un clic : la page entière, ce que vous voyez, une zone choisie ou un seul élément. Les applications web dont le contenu défile dans un panneau sont aussi capturées jusqu&#x27;au bout.</p>
+    <p class="lead">La plupart des pages vous accueillent avec une bannière de cookies, une bulle de chat et un emplacement publicitaire vide. Tidy Screenshot masque ce désordre avant la capture : votre capture montre la page elle-même, pas les fenêtres surgissantes.</p>
     <div class="cta">
       <a class="btn" href="https://chromewebstore.google.com/detail/tidy-screenshot-full-page/hnphaoicacdffinbiahcbacaanooompa?hl=fr">Ajouter à Chrome – gratuit</a>
       <a class="btn ghost" href="https://microsoftedge.microsoft.com/addons/detail/jlecccfnklojjjmgcpjckaiblgcnnkgg">Ajouter à Microsoft Edge</a>
@@ -116,21 +116,29 @@ h2.caps{font-size:14px;letter-spacing:.08em;color:var(--muted);margin:0 0 6px}
   <section>
     <h2 class="caps">CAPTURE</h2>
     <ul>
-      <li>Page entière : fait défiler la page et l’assemble en une seule image</li>
+      <li>Page entière : fait défiler et assemble toute la page en une seule image</li>
+      <li>Applications web et tableaux de bord : quand le contenu défile dans son propre panneau à côté d&#x27;un menu fixe, Tidy fait défiler ce panneau jusqu&#x27;au bout ; le menu et l&#x27;en-tête n&#x27;apparaissent qu&#x27;une fois</li>
+      <li>Les pages très longues sont découpées en 3 parties au plus : enregistrez chaque partie en PNG, ou toute la page en un seul PDF continu</li>
       <li>Zone visible</li>
-      <li>Sélectionner une zone : rectangle, ovale (maintenez Maj pour un carré ou un cercle) ou forme libre ; autour d’un ovale ou d’une forme libre, le PNG est transparent</li>
-      <li>Masque les bandeaux de consentement aux cookies des plateformes courantes (rien n’est cliqué ni accepté), les bulles de chat et les emplacements publicitaires vides</li>
-      <li>Les en-têtes fixes ne se répètent pas le long de la page ; les images différées sont chargées avant la capture</li>
-      <li>Raccourcis : <kbd>Alt+Shift+S</kbd> (page entière), <kbd>Alt+Shift+V</kbd> (zone visible), <kbd>Alt+Shift+D</kbd> (sélectionner une zone)</li>
+      <li>Sélectionner une zone : rectangle, ovale (maintenez Maj pour un carré ou un cercle) ou forme libre ; hors d&#x27;un ovale ou d&#x27;une forme libre, le PNG est transparent</li>
+      <li>Capturer un élément : pointez-le et cliquez ; ↑ / ↓ choisit un élément plus large ou plus étroit ; une zone qui défile est capturée avec tout son contenu</li>
+      <li>Délai de 3, 5 ou 10 secondes pour ouvrir d&#x27;abord un menu ; le compte à rebours n&#x27;apparaît jamais dans l&#x27;image</li>
+      <li>Masque les bannières de consentement aux cookies des plateformes courantes (rien n&#x27;est cliqué ni accepté), les bulles de chat et les emplacements publicitaires vides</li>
+      <li>Les en-têtes fixes ne se répètent pas le long de la page ; les images différées se chargent avant la capture</li>
+      <li>Si une page ne peut pas être capturée entièrement, Tidy vous le dit au lieu d&#x27;enregistrer en silence une image fausse</li>
+      <li>Raccourcis : Alt+Maj+S (page entière), Alt+Maj+V (zone visible), Alt+Maj+D (sélectionner une zone) ; une touche pour la capture d&#x27;élément peut être définie dans les réglages de raccourcis du navigateur</li>
     </ul>
   </section>
 
   <section>
     <h2 class="caps">MODIFIER ET PARTAGER</h2>
     <ul>
-      <li>Éditeur intégré : rogner, crayon, flèche, cadre, surligner, flouter (pixelliser) pour masquer les informations privées, et texte, avec annuler et rétablir</li>
-      <li>Passez de la vue rapprochée à l’image entière en un clic</li>
-      <li>Téléchargez en PNG, JPG ou PDF multipage, ou copiez dans le presse-papiers</li>
+      <li>Net à 100 % : un pixel d&#x27;image par pixel d&#x27;écran ; saisissez n&#x27;importe quel zoom de 2 % à 400 % ou appuyez sur 1:1</li>
+      <li>Passez d&#x27;un clic de la vue rapprochée à l&#x27;image entière</li>
+      <li>Éditeur intégré : recadrer, crayon, flèche, cadre, surligner, flouter (pixeliser) pour cacher les informations privées, et texte, avec annuler et rétablir</li>
+      <li>Téléchargez en PNG, JPG ou PDF de plusieurs pages, ou copiez dans le presse-papiers</li>
+      <li>Après la capture : ouvrir l&#x27;éditeur, télécharger tout de suite un PNG ou copier dans le presse-papiers (au choix dans les réglages)</li>
+      <li>Noms de fichier à partir de <code>{title}</code>, <code>{host}</code>, <code>{date}</code> et <code>{time}</code></li>
       <li>Interface en 18 langues</li>
     </ul>
   </section>
@@ -139,22 +147,24 @@ h2.caps{font-size:14px;letter-spacing:.08em;color:var(--muted);margin:0 0 6px}
     <h2 class="caps">CONFIDENTIALITÉ DÈS LA CONCEPTION</h2>
     <ul>
       <li>Gratuit, sans compte, sans inscription</li>
-      <li>Aucune analyse, aucun suivi</li>
+      <li>Aucune statistique, aucun pistage</li>
       <li>Les captures et les modifications ne quittent jamais votre navigateur</li>
-      <li>Autorisations minimales : uniquement l’onglet choisi, uniquement quand vous cliquez</li>
+      <li>Permissions minimales : seulement l&#x27;onglet choisi, seulement quand vous cliquez</li>
     </ul>
   </section>
 
   <section>
     <h2 class="caps">BON À SAVOIR</h2>
     <ul>
-      <li>Aucune extension ne peut capturer les pages du navigateur lui-même (paramètres, boutiques d’extensions).</li>
-      <li>Les pages extrêmement longues s’arrêtent à environ 32 000 pixels, la plus grande image que les navigateurs peuvent dessiner.</li>
+      <li>Les pages du navigateur (réglages, boutiques d&#x27;extensions) ne peuvent être capturées par aucune extension.</li>
+      <li>Les pages extrêmement longues s&#x27;arrêtent après 3 parties (environ 96 000 pixels) ; Tidy vous signale quand une page a été coupée.</li>
+      <li>Avec « télécharger tout de suite », l&#x27;onglet de résultat s&#x27;ouvre brièvement en arrière-plan puis se ferme tout seul.</li>
+      <li>Dans Firefox, copier juste après une capture peut demander un clic sur Copier.</li>
     </ul>
   </section>
 
   <section>
-    <p class="muted">Conçu par DataDock Labs. Une question ou une page qui ne s’affiche pas correctement ? <a href="mailto:datadocklabs@gmail.com">datadocklabs@gmail.com</a></p>
+    <p class="muted">Créé par DataDock Labs. Une question ou une page qui ne sort pas correctement : <a href="mailto:datadocklabs@gmail.com">datadocklabs@gmail.com</a></p>
     <p class="muted"><a href="/privacy/tidy-screenshot.html" hreflang="en">Politique de confidentialité (en anglais)</a> · <a href="/tidy-screenshot/" hreflang="en">Fonctionnement et questions fréquentes (en anglais)</a></p>
   </section>
 

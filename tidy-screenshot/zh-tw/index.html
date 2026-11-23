@@ -100,7 +100,7 @@ h2.caps{font-size:14px;letter-spacing:.08em;color:var(--muted);margin:0 0 6px}
   <div class="wrap">
     <nav><a href="/">&larr; DataDock Labs</a></nav>
     <div class="hero"><img src="/assets/tidy-screenshot.png" alt=""><h1>整頁截圖，自動移除 Cookie 橫幅</h1></div>
-    <p class="lead">一鍵為任何網頁擷取乾淨的截圖：整個頁面、你看到的部分，或只擷取你選取的區域。</p>
+    <p class="lead">一鍵為任何網頁擷取乾淨的截圖：整個頁面、你看到的部分、你選取的區域，或單一元素。內容在面板內捲動的網頁應用程式也能完整擷取到底。</p>
     <p class="lead">大多數網頁都會跳出 Cookie 橫幅、聊天泡泡和空白廣告欄位。Tidy Screenshot 會在擷取前隱藏這些干擾，讓截圖呈現頁面本身，而不是彈出視窗。</p>
     <div class="cta">
       <a class="btn" href="https://chromewebstore.google.com/detail/tidy-screenshot-full-page/hnphaoicacdffinbiahcbacaanooompa?hl=zh-TW">加到 Chrome（免費）</a>
@@ -117,20 +117,28 @@ h2.caps{font-size:14px;letter-spacing:.08em;color:var(--muted);margin:0 0 6px}
     <h2 class="caps">擷取</h2>
     <ul>
       <li>整頁：捲動頁面並拼接成一張完整圖片</li>
+      <li>網頁應用程式和儀表板：內容在固定選單旁的獨立面板中捲動時，Tidy 會把該面板捲動到底；選單和標題只出現一次</li>
+      <li>超長頁面最多分成 3 部分：每部分儲存為 PNG，或把整頁儲存為一個連續的 PDF</li>
       <li>可見區域</li>
       <li>選取區域：矩形、橢圓（按住 Shift 可畫正方形或正圓）或自由形狀；橢圓或自由形狀以外的部分在 PNG 中為透明</li>
+      <li>擷取元素：指向元素並點擊；↑ / ↓ 選擇更大或更小的元素；自帶捲動的方框會連同全部內容一起擷取</li>
+      <li>延遲 3、5 或 10 秒，方便先開啟選單；倒數計時不會出現在圖片中</li>
       <li>隱藏常見同意管理平台的 Cookie 同意橫幅（不會點擊或接受任何內容）、聊天泡泡和空白廣告欄位</li>
       <li>固定標題列不會在頁面中重複出現；延遲載入的圖片會在擷取前載入</li>
-      <li>快速鍵：<kbd>Alt+Shift+S</kbd>（整頁）、<kbd>Alt+Shift+V</kbd>（可見區域）、<kbd>Alt+Shift+D</kbd>（選取區域）</li>
+      <li>如果頁面無法完整擷取，Tidy 會告訴你，而不是悄悄儲存一張錯誤的圖片</li>
+      <li>快速鍵：<kbd>Alt+Shift+S</kbd>（整頁）、<kbd>Alt+Shift+V</kbd>（可見區域）、<kbd>Alt+Shift+D</kbd>（選取區域）；擷取元素的按鍵可在瀏覽器的快速鍵設定中指定</li>
     </ul>
   </section>
 
   <section>
     <h2 class="caps">編輯與分享</h2>
     <ul>
-      <li>內建編輯器：裁切、畫筆、箭頭、方框、螢光標示、用來隱藏隱私資訊的模糊（馬賽克）和文字，支援復原和重做</li>
+      <li>100% 清晰：一個螢幕像素對應一個影像像素；可輸入 2% 到 400% 之間的任意縮放，或按 1:1</li>
       <li>一鍵切換放大檢視和全圖檢視</li>
+      <li>內建編輯器：裁切、畫筆、箭頭、方框、螢光標示、用來隱藏隱私資訊的模糊（馬賽克）和文字，支援復原和重做</li>
       <li>下載為 PNG、JPG 或多頁 PDF，或複製到剪貼簿</li>
+      <li>擷取後：開啟編輯器、立即下載 PNG 或複製到剪貼簿（在設定中選擇）</li>
+      <li>檔名可使用 <code>{title}</code>、<code>{host}</code>、<code>{date}</code> 和 <code>{time}</code></li>
       <li>介面支援 18 種語言</li>
     </ul>
   </section>
@@ -149,7 +157,9 @@ h2.caps{font-size:14px;letter-spacing:.08em;color:var(--muted);margin:0 0 6px}
     <h2 class="caps">小提醒</h2>
     <ul>
       <li>瀏覽器本身的頁面（設定、擴充功能商店）任何擴充功能都無法擷取。</li>
-      <li>超長頁面會在約 32,000 像素處截止，這是瀏覽器能繪製的最大圖像尺寸。</li>
+      <li>極長的頁面在 3 部分（約 96,000 像素）後截止；頁面被截斷時 Tidy 會提示你。</li>
+      <li>選擇「立即下載」時，結果分頁會在背景短暫開啟，然後自動關閉。</li>
+      <li>在 Firefox 中，擷取後立即複製可能需要點擊一次「複製」。</li>
     </ul>
   </section>
 

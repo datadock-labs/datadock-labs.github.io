@@ -100,7 +100,7 @@ h2.caps{font-size:14px;letter-spacing:.08em;color:var(--muted);margin:0 0 6px}
   <div class="wrap">
     <nav><a href="/">&larr; DataDock Labs</a></nav>
     <div class="hero"><img src="/assets/tidy-screenshot.png" alt=""><h1>Tam Sayfa Ekran Görüntüsü</h1></div>
-    <p class="lead">Her web sayfasının temiz ekran görüntüsü tek tıkla: tam sayfa, ekranda gördüğünüz alan ya da yalnızca seçtiğiniz bölüm.</p>
+    <p class="lead">Her web sayfasının temiz ekran görüntüsü tek tıkla: tam sayfa, ekranda gördüğünüz alan, seçtiğiniz bölüm ya da tek bir öğe. İçeriği bir panelin içinde kayan web uygulamaları da sonuna kadar yakalanır.</p>
     <p class="lead">Neredeyse her sayfa sizi bir çerez bildirimi, bir sohbet balonu ve boş bir reklam alanıyla karşılar. Tidy Screenshot bu kalabalığı görüntüyü almadan önce gizler; böylece ekran görüntünüzde açılır pencereler değil, sayfanın kendisi görünür.</p>
     <div class="cta">
       <a class="btn" href="https://chromewebstore.google.com/detail/tidy-screenshot-full-page/hnphaoicacdffinbiahcbacaanooompa?hl=tr">Chrome&#x27;a ekle – ücretsiz</a>
@@ -117,20 +117,28 @@ h2.caps{font-size:14px;letter-spacing:.08em;color:var(--muted);margin:0 0 6px}
     <h2 class="caps">ÇEKİM</h2>
     <ul>
       <li>Tam sayfa: sayfayı kaydırır ve tamamını tek bir görüntüde birleştirir</li>
+      <li>Web uygulamaları ve paneller: içerik sabit bir menünün yanında kendi panelinde kayıyorsa Tidy o paneli sonuna kadar kaydırır; menü ve başlık bir kez görünür</li>
+      <li>Çok uzun sayfalar en çok 3 parçaya bölünür: her parçayı PNG olarak ya da sayfanın tamamını tek, kesintisiz bir PDF olarak kaydedin</li>
       <li>Görünen alan</li>
       <li>Alan seçin: dikdörtgen, yuvarlak (kare ya da daire için Shift&#x27;e basılı tutun) veya serbest seçim; yuvarlak ve serbest seçimde şeklin dışı PNG&#x27;de şeffaftır</li>
+      <li>Öğe yakalama: öğenin üzerine gelip tıklayın; ↑ / ↓ daha geniş ya da daha dar öğeyi seçer; kendi içinde kayan bir kutu bütün içeriğiyle yakalanır</li>
+      <li>3, 5 ya da 10 saniye gecikme: önce bir menü açabilirsiniz; geri sayım görüntüde hiç görünmez</li>
       <li>Yaygın onay platformlarının çerez bildirimlerini (hiçbir şeye tıklanmaz, hiçbir şey kabul edilmez), sohbet balonlarını ve boş reklam alanlarını gizler</li>
       <li>Sabit başlıklar sayfa boyunca tekrarlanmaz; geç yüklenen görseller çekimden önce yüklenir</li>
-      <li>Kısayollar: <kbd>Alt+Shift+S</kbd> (tam sayfa), <kbd>Alt+Shift+V</kbd> (görünen alan), <kbd>Alt+Shift+D</kbd> (alan seçimi)</li>
+      <li>Bir sayfa eksiksiz yakalanamıyorsa Tidy yanlış bir görüntüyü sessizce kaydetmek yerine size söyler</li>
+      <li>Kısayollar: <kbd>Alt+Shift+S</kbd> (tam sayfa), <kbd>Alt+Shift+V</kbd> (görünen alan), <kbd>Alt+Shift+D</kbd> (alan seçimi); öğe yakalama için tarayıcının kısayol ayarlarından bir tuş atanabilir</li>
     </ul>
   </section>
 
   <section>
     <h2 class="caps">DÜZENLE VE PAYLAŞ</h2>
     <ul>
-      <li>Yerleşik düzenleyici: kırpma, kalem, ok, kutu, vurgulama, özel bilgileri gizlemek için bulanıklaştırma (pikselleştirme) ve metin; geri alma ve yineleme ile</li>
+      <li>%100&#x27;de net: ekran pikseli başına bir görüntü pikseli; %2 ile %400 arasında istediğiniz yakınlığı yazın ya da 1:1&#x27;e basın</li>
       <li>Yakın görünüm ile tüm görüntü arasında tek tıkla geçiş</li>
+      <li>Yerleşik düzenleyici: kırpma, kalem, ok, kutu, vurgulama, özel bilgileri gizlemek için bulanıklaştırma (pikselleştirme) ve metin; geri alma ve yineleme ile</li>
       <li>PNG, JPG ya da çok sayfalı PDF olarak indirin veya panoya kopyalayın</li>
+      <li>Çekimden sonra: düzenleyiciyi açın, PNG&#x27;yi hemen indirin ya da panoya kopyalayın (seçim ayarlarda)</li>
+      <li>Dosya adları <code>{title}</code>, <code>{host}</code>, <code>{date}</code> ve <code>{time}</code> ile</li>
       <li>18 dilde arayüz</li>
     </ul>
   </section>
@@ -149,7 +157,9 @@ h2.caps{font-size:14px;letter-spacing:.08em;color:var(--muted);margin:0 0 6px}
     <h2 class="caps">BİLMEKTE FAYDA VAR</h2>
     <ul>
       <li>Tarayıcının kendi sayfalarının (ayarlar, eklenti mağazaları) görüntüsünü hiçbir eklenti alamaz.</li>
-      <li>Çok uzun sayfalar, tarayıcıların çizebildiği en büyük görüntü olan yaklaşık 32.000 pikselde kesilir.</li>
+      <li>Aşırı uzun sayfalar 3 parçadan (yaklaşık 96.000 piksel) sonra kesilir; Tidy sayfanın kesildiğini size söyler.</li>
+      <li>&quot;Hemen indir&quot; seçiliyken sonuç sekmesi kısa süre arka planda açılır, sonra kendiliğinden kapanır.</li>
+      <li>Firefox&#x27;ta çekimden hemen sonra kopyalamak için Kopyala&#x27;ya bir kez tıklamak gerekebilir.</li>
     </ul>
   </section>
 

@@ -100,7 +100,7 @@ h2.caps{font-size:14px;letter-spacing:.08em;color:var(--muted);margin:0 0 6px}
   <div class="wrap">
     <nav><a href="/">&larr; DataDock Labs</a></nav>
     <div class="hero"><img src="/assets/tidy-screenshot.png" alt=""><h1>Screenshot Halaman Penuh</h1></div>
-    <p class="lead">Tangkapan layar yang bersih dari halaman web mana pun dengan satu klik: seluruh halaman, yang Anda lihat, atau hanya bagian yang Anda pilih.</p>
+    <p class="lead">Tangkapan layar yang bersih dari halaman web mana pun dengan satu klik: seluruh halaman, yang Anda lihat, area yang Anda pilih, atau satu elemen. Aplikasi web yang isinya bergulir di dalam panel juga ditangkap sampai akhir.</p>
     <p class="lead">Hampir setiap halaman menyambut Anda dengan banner cookie, gelembung chat, dan slot iklan kosong. Tidy Screenshot menyembunyikan semua itu sebelum menangkap, sehingga tangkapan layar Anda menampilkan halamannya sendiri, bukan pop-up.</p>
     <div class="cta">
       <a class="btn" href="https://chromewebstore.google.com/detail/tidy-screenshot-full-page/hnphaoicacdffinbiahcbacaanooompa?hl=id">Tambahkan ke Chrome – gratis</a>
@@ -117,20 +117,28 @@ h2.caps{font-size:14px;letter-spacing:.08em;color:var(--muted);margin:0 0 6px}
     <h2 class="caps">TANGKAP</h2>
     <ul>
       <li>Seluruh halaman: menggulir dan menggabungkan seluruh halaman menjadi satu gambar</li>
+      <li>Aplikasi web dan dasbor: jika isi bergulir di panelnya sendiri di samping menu tetap, Tidy menggulir panel itu sampai akhir; menu dan header muncul sekali saja</li>
+      <li>Halaman yang sangat panjang dibagi menjadi paling banyak 3 bagian: simpan setiap bagian sebagai PNG, atau seluruh halaman sebagai satu PDF bersambung</li>
       <li>Area yang terlihat</li>
       <li>Pilih area: persegi panjang, oval (tahan Shift untuk persegi atau lingkaran), atau bentuk bebas; di luar oval atau bentuk bebas, PNG menjadi transparan</li>
+      <li>Tangkap elemen: arahkan ke elemen lalu klik; ↑ / ↓ memilih elemen yang lebih besar atau lebih kecil; kotak yang bergulir sendiri ditangkap dengan seluruh isinya</li>
+      <li>Penundaan 3, 5, atau 10 detik agar Anda bisa membuka menu terlebih dahulu; hitung mundur tidak pernah masuk ke gambar</li>
       <li>Menyembunyikan banner persetujuan cookie dari platform persetujuan yang umum (tidak ada yang diklik atau disetujui), gelembung chat, dan slot iklan kosong</li>
       <li>Header yang menempel tidak berulang di sepanjang halaman; gambar lazy-load dimuat sebelum tangkapan</li>
-      <li>Pintasan: <kbd>Alt+Shift+S</kbd> (seluruh halaman), <kbd>Alt+Shift+V</kbd> (area terlihat), <kbd>Alt+Shift+D</kbd> (pilih area)</li>
+      <li>Jika halaman tidak dapat ditangkap sepenuhnya, Tidy memberi tahu Anda alih-alih diam-diam menyimpan gambar yang salah</li>
+      <li>Pintasan: <kbd>Alt+Shift+S</kbd> (seluruh halaman), <kbd>Alt+Shift+V</kbd> (area terlihat), <kbd>Alt+Shift+D</kbd> (pilih area); tombol untuk menangkap elemen dapat diatur di pengaturan pintasan browser</li>
     </ul>
   </section>
 
   <section>
     <h2 class="caps">EDIT DAN BAGIKAN</h2>
     <ul>
-      <li>Editor bawaan: pangkas, pena, panah, kotak, sorot, buramkan (pikselasi) untuk menyembunyikan data pribadi, dan teks, dengan urungkan dan ulangi</li>
+      <li>Tajam di 100%: satu piksel gambar per piksel layar; ketik zoom apa pun dari 2% hingga 400% atau tekan 1:1</li>
       <li>Beralih antara tampilan dekat dan seluruh gambar sekaligus</li>
+      <li>Editor bawaan: pangkas, pena, panah, kotak, sorot, buramkan (pikselasi) untuk menyembunyikan data pribadi, dan teks, dengan urungkan dan ulangi</li>
       <li>Unduh sebagai PNG, JPG, atau PDF multi-halaman, atau salin ke papan klip</li>
+      <li>Setelah menangkap: buka editor, langsung unduh PNG, atau salin ke papan klip (pilih di pengaturan)</li>
+      <li>Nama file dari <code>{title}</code>, <code>{host}</code>, <code>{date}</code>, dan <code>{time}</code></li>
       <li>Antarmuka dalam 18 bahasa</li>
     </ul>
   </section>
@@ -149,7 +157,9 @@ h2.caps{font-size:14px;letter-spacing:.08em;color:var(--muted);margin:0 0 6px}
     <h2 class="caps">PERLU DIKETAHUI</h2>
     <ul>
       <li>Halaman browser itu sendiri (pengaturan, toko ekstensi) tidak dapat ditangkap oleh ekstensi apa pun.</li>
-      <li>Halaman yang sangat panjang berhenti di sekitar 32.000 piksel, gambar terbesar yang dapat digambar browser.</li>
+      <li>Halaman yang ekstrem panjang berhenti setelah 3 bagian (sekitar 96.000 piksel); Tidy memberi tahu jika halaman terpotong.</li>
+      <li>Dengan &quot;langsung unduh&quot;, tab hasil terbuka sebentar di latar belakang lalu menutup sendiri.</li>
+      <li>Di Firefox, menyalin tepat setelah menangkap mungkin memerlukan satu klik pada Salin.</li>
     </ul>
   </section>
 

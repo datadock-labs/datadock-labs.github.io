@@ -100,8 +100,8 @@ h2.caps{font-size:14px;letter-spacing:.08em;color:var(--muted);margin:0 0 6px}
   <div class="wrap">
     <nav><a href="/">&larr; DataDock Labs</a></nav>
     <div class="hero"><img src="/assets/tidy-screenshot.png" alt=""><h1>Captura de página inteira</h1></div>
-    <p class="lead">Capturas de tela limpas de qualquer página com um clique: a página inteira, o que você vê ou só a parte que você selecionar.</p>
-    <p class="lead">Quase toda página recebe você com um aviso de cookies, um balão de chat e um espaço de anúncio vazio. O Tidy Screenshot esconde tudo isso antes de capturar, para que a captura mostre a página, e não os pop-ups.</p>
+    <p class="lead">Capturas de tela limpas de qualquer página da web com um clique: a página inteira, o que você vê, a área que você selecionar ou um único elemento. Aplicativos web cujo conteúdo rola dentro de um painel também são capturados até o fim.</p>
+    <p class="lead">A maioria das páginas recebe você com um aviso de cookies, um balão de chat e um espaço de anúncio vazio. O Tidy Screenshot esconde essa bagunça antes de capturar, para que a captura mostre a própria página, não os pop-ups.</p>
     <div class="cta">
       <a class="btn" href="https://chromewebstore.google.com/detail/tidy-screenshot-full-page/hnphaoicacdffinbiahcbacaanooompa?hl=pt-BR">Usar no Chrome: grátis</a>
       <a class="btn ghost" href="https://microsoftedge.microsoft.com/addons/detail/jlecccfnklojjjmgcpjckaiblgcnnkgg">Adicionar ao Microsoft Edge</a>
@@ -117,20 +117,28 @@ h2.caps{font-size:14px;letter-spacing:.08em;color:var(--muted);margin:0 0 6px}
     <h2 class="caps">CAPTURA</h2>
     <ul>
       <li>Página inteira: rola e junta a página toda em uma única imagem</li>
+      <li>Aplicativos web e painéis: quando o conteúdo rola no próprio painel ao lado de um menu fixo, o Tidy rola esse painel até o fim; o menu e o cabeçalho aparecem uma só vez</li>
+      <li>Páginas muito longas são divididas em até 3 partes: salve cada parte como PNG ou a página inteira como um único PDF contínuo</li>
       <li>Área visível</li>
-      <li>Selecionar uma área: retângulo, oval (segure Shift para um quadrado ou um círculo) ou forma livre; fora de um oval ou de uma forma livre, o PNG fica transparente</li>
-      <li>Esconde avisos de consentimento de cookies das plataformas mais comuns (nada é clicado ou aceito), balões de chat e espaços de anúncio vazios</li>
+      <li>Selecionar uma área: retângulo, oval (segure Shift para um quadrado ou círculo) ou forma livre; fora de um oval ou de uma forma livre, o PNG fica transparente</li>
+      <li>Capturar um elemento: aponte e clique; ↑ / ↓ escolhe um elemento maior ou menor; uma caixa com rolagem própria é capturada com todo o conteúdo</li>
+      <li>Atraso de 3, 5 ou 10 segundos para abrir um menu antes; a contagem regressiva nunca aparece na imagem</li>
+      <li>Esconde avisos de consentimento de cookies das plataformas mais comuns (nada é clicado nem aceito), balões de chat e espaços de anúncio vazios</li>
       <li>Cabeçalhos fixos não se repetem ao longo da página; imagens com carregamento lento são carregadas antes da captura</li>
-      <li>Atalhos: <kbd>Alt+Shift+S</kbd> (página inteira), <kbd>Alt+Shift+V</kbd> (área visível), <kbd>Alt+Shift+D</kbd> (selecionar uma área)</li>
+      <li>Se uma página não puder ser capturada por inteiro, o Tidy avisa em vez de salvar em silêncio uma imagem errada</li>
+      <li>Atalhos: <kbd>Alt+Shift+S</kbd> (página inteira), <kbd>Alt+Shift+V</kbd> (área visível), <kbd>Alt+Shift+D</kbd> (selecionar uma área); uma tecla para capturar elemento pode ser definida nas configurações de atalhos do navegador</li>
     </ul>
   </section>
 
   <section>
     <h2 class="caps">EDITAR E COMPARTILHAR</h2>
     <ul>
-      <li>Editor integrado: recortar, caneta, seta, caixa, destaque, desfoque (pixelização) para esconder dados privados e texto, com desfazer e refazer</li>
-      <li>Alterne entre a visão de perto e a imagem inteira de uma vez</li>
+      <li>Nítida em 100%: um pixel da imagem por pixel da tela; digite qualquer zoom de 2% a 400% ou aperte 1:1</li>
+      <li>Alterne com um clique entre a visão de perto e a imagem inteira</li>
+      <li>Editor embutido: cortar, caneta, seta, caixa, destaque, desfocar (pixelizar) para esconder dados privados e texto, com desfazer e refazer</li>
       <li>Baixe em PNG, JPG ou PDF de várias páginas, ou copie para a área de transferência</li>
+      <li>Depois da captura: abrir o editor, baixar um PNG na hora ou copiar para a área de transferência (escolha nas configurações)</li>
+      <li>Nomes de arquivo com <code>{title}</code>, <code>{host}</code>, <code>{date}</code> e <code>{time}</code></li>
       <li>Interface em 18 idiomas</li>
     </ul>
   </section>
@@ -138,8 +146,8 @@ h2.caps{font-size:14px;letter-spacing:.08em;color:var(--muted);margin:0 0 6px}
   <section>
     <h2 class="caps">PRIVACIDADE DESDE A CONCEPÇÃO</h2>
     <ul>
-      <li>Grátis, sem conta e sem cadastro</li>
-      <li>Sem análises e sem rastreamento</li>
+      <li>Grátis, sem conta, sem cadastro</li>
+      <li>Sem análises, sem rastreamento</li>
       <li>Capturas e edições nunca saem do seu navegador</li>
       <li>Permissões mínimas: só a aba que você escolher, só quando você clicar</li>
     </ul>
@@ -149,12 +157,14 @@ h2.caps{font-size:14px;letter-spacing:.08em;color:var(--muted);margin:0 0 6px}
     <h2 class="caps">BOM SABER</h2>
     <ul>
       <li>Nenhuma extensão consegue capturar páginas do próprio navegador (configurações, lojas de extensões).</li>
-      <li>Páginas extremamente longas param em cerca de 32.000 pixels, a maior imagem que os navegadores conseguem desenhar.</li>
+      <li>Páginas extremamente longas param depois de 3 partes (cerca de 96.000 pixels); o Tidy avisa quando uma página foi cortada.</li>
+      <li>Com &quot;baixar na hora&quot;, a aba de resultado abre rapidamente em segundo plano e depois se fecha sozinha.</li>
+      <li>No Firefox, copiar logo depois de uma captura pode exigir um clique em Copiar.</li>
     </ul>
   </section>
 
   <section>
-    <p class="muted">Feito pela DataDock Labs. Dúvidas ou uma página que não saiu direito? <a href="mailto:datadocklabs@gmail.com">datadocklabs@gmail.com</a></p>
+    <p class="muted">Feito por DataDock Labs. Dúvidas ou uma página que não saiu direito: <a href="mailto:datadocklabs@gmail.com">datadocklabs@gmail.com</a></p>
     <p class="muted"><a href="/privacy/tidy-screenshot.html" hreflang="en">Política de privacidade (em inglês)</a> · <a href="/tidy-screenshot/" hreflang="en">Como funciona e perguntas frequentes (em inglês)</a></p>
   </section>
 

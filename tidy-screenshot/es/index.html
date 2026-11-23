@@ -100,7 +100,7 @@ h2.caps{font-size:14px;letter-spacing:.08em;color:var(--muted);margin:0 0 6px}
   <div class="wrap">
     <nav><a href="/">&larr; DataDock Labs</a></nav>
     <div class="hero"><img src="/assets/tidy-screenshot.png" alt=""><h1>Captura de página completa</h1></div>
-    <p class="lead">Capturas de pantalla limpias de cualquier página web con un clic: la página completa, lo que ves o solo la parte que selecciones.</p>
+    <p class="lead">Capturas de pantalla limpias de cualquier página web con un clic: la página completa, lo que ves, la zona que selecciones o un solo elemento. Las aplicaciones web cuyo contenido se desplaza dentro de un panel también se capturan hasta el final.</p>
     <p class="lead">Casi todas las páginas te reciben con un aviso de cookies, una burbuja de chat y un hueco de anuncio vacío. Tidy Screenshot oculta todo eso antes de capturar, para que la captura muestre la página, no las ventanas emergentes.</p>
     <div class="cta">
       <a class="btn" href="https://chromewebstore.google.com/detail/tidy-screenshot-full-page/hnphaoicacdffinbiahcbacaanooompa?hl=es">Añadir a Chrome: gratis</a>
@@ -117,20 +117,28 @@ h2.caps{font-size:14px;letter-spacing:.08em;color:var(--muted);margin:0 0 6px}
     <h2 class="caps">CAPTURA</h2>
     <ul>
       <li>Página completa: desplaza y une toda la página en una sola imagen</li>
+      <li>Aplicaciones web y paneles: cuando el contenido se desplaza en su propio panel junto a un menú fijo, Tidy desplaza ese panel hasta el final; el menú y el encabezado aparecen una sola vez</li>
+      <li>Las páginas muy largas se dividen en 3 partes como máximo: guarda cada parte en PNG o toda la página como un único PDF continuo</li>
       <li>Área visible</li>
       <li>Seleccionar un área: rectángulo, óvalo (mantén Shift para un cuadrado o un círculo) o forma libre; fuera de un óvalo o de una forma libre, el PNG es transparente</li>
+      <li>Capturar un elemento: señálalo y haz clic; ↑ / ↓ elige un elemento más amplio o más pequeño; un cuadro con desplazamiento propio se captura con todo su contenido</li>
+      <li>Retraso de 3, 5 o 10 segundos para abrir antes un menú; la cuenta atrás nunca aparece en la imagen</li>
       <li>Oculta los avisos de consentimiento de cookies de las plataformas más comunes (no se hace clic ni se acepta nada), las burbujas de chat y los huecos de anuncios vacíos</li>
       <li>Los encabezados fijos no se repiten a lo largo de la página; las imágenes diferidas se cargan antes de capturar</li>
-      <li>Atajos: <kbd>Alt+Shift+S</kbd> (página completa), <kbd>Alt+Shift+V</kbd> (área visible), <kbd>Alt+Shift+D</kbd> (seleccionar un área)</li>
+      <li>Si una página no se puede capturar por completo, Tidy te lo dice en lugar de guardar en silencio una imagen errónea</li>
+      <li>Atajos: <kbd>Alt+Shift+S</kbd> (página completa), <kbd>Alt+Shift+V</kbd> (área visible), <kbd>Alt+Shift+D</kbd> (seleccionar un área); se puede asignar una tecla a la captura de elementos en los ajustes de atajos del navegador</li>
     </ul>
   </section>
 
   <section>
     <h2 class="caps">EDITAR Y COMPARTIR</h2>
     <ul>
-      <li>Editor integrado: recortar, lápiz, flecha, cuadro, resaltar, difuminar (pixelar) para ocultar datos privados y texto, con deshacer y rehacer</li>
+      <li>Nítida al 100 %: un píxel de imagen por píxel de pantalla; escribe cualquier zoom del 2 % al 400 % o pulsa 1:1</li>
       <li>Cambia entre la vista de cerca y la imagen completa de un vistazo</li>
+      <li>Editor integrado: recortar, lápiz, flecha, cuadro, resaltar, difuminar (pixelar) para ocultar datos privados y texto, con deshacer y rehacer</li>
       <li>Descarga en PNG, JPG o PDF de varias páginas, o copia al portapapeles</li>
+      <li>Después de capturar: abrir el editor, descargar un PNG al instante o copiar al portapapeles (a elegir en los ajustes)</li>
+      <li>Nombres de archivo con <code>{title}</code>, <code>{host}</code>, <code>{date}</code> y <code>{time}</code></li>
       <li>Interfaz en 18 idiomas</li>
     </ul>
   </section>
@@ -141,20 +149,22 @@ h2.caps{font-size:14px;letter-spacing:.08em;color:var(--muted);margin:0 0 6px}
       <li>Gratis, sin cuenta y sin registro</li>
       <li>Sin analíticas ni seguimiento</li>
       <li>Las capturas y las ediciones nunca salen de tu navegador</li>
-      <li>Permisos mínimos: solo la pestaña que eliges y solo cuando haces clic</li>
+      <li>Permisos mínimos: solo la pestaña que elijas, solo cuando hagas clic</li>
     </ul>
   </section>
 
   <section>
     <h2 class="caps">CONVIENE SABER</h2>
     <ul>
-      <li>Ninguna extensión puede capturar las páginas del propio navegador (configuración, tiendas de extensiones).</li>
-      <li>Las páginas extremadamente largas se cortan en unos 32.000 píxeles, la imagen más grande que pueden dibujar los navegadores.</li>
+      <li>Ninguna extensión puede capturar las páginas propias del navegador (ajustes, tiendas de extensiones).</li>
+      <li>Las páginas extremadamente largas se cortan tras 3 partes (unos 96.000 píxeles); Tidy te avisa cuando una página se ha cortado.</li>
+      <li>Con «descargar al instante», la pestaña de resultado se abre un momento en segundo plano y luego se cierra sola.</li>
+      <li>En Firefox, copiar justo después de una captura puede requerir un clic en Copiar.</li>
     </ul>
   </section>
 
   <section>
-    <p class="muted">Creado por DataDock Labs. ¿Dudas o una página que no sale bien? <a href="mailto:datadocklabs@gmail.com">datadocklabs@gmail.com</a></p>
+    <p class="muted">Creado por DataDock Labs. Si tienes preguntas o una página no sale bien: <a href="mailto:datadocklabs@gmail.com">datadocklabs@gmail.com</a></p>
     <p class="muted"><a href="/privacy/tidy-screenshot.html" hreflang="en">Política de privacidad (en inglés)</a> · <a href="/tidy-screenshot/" hreflang="en">Cómo funciona y preguntas frecuentes (en inglés)</a></p>
   </section>
 

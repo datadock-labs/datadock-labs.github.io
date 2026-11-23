@@ -100,7 +100,7 @@ h2.caps{font-size:14px;letter-spacing:.08em;color:var(--muted);margin:0 0 6px}
   <div class="wrap">
     <nav><a href="/">&larr; DataDock Labs</a></nav>
     <div class="hero"><img src="/assets/tidy-screenshot.png" alt=""><h1>ページ全体のスクリーンショット（Cookieバナーなし）</h1></div>
-    <p class="lead">どんなWebページも、ワンクリックできれいなスクリーンショットに。ページ全体、表示中の範囲、または選択した部分だけを撮影できます。</p>
+    <p class="lead">どんなWebページも、ワンクリックできれいなスクリーンショットに。ページ全体、表示中の範囲、選択した部分、または1つの要素だけを撮影できます。パネル内でスクロールするWebアプリも最後まで撮影できます。</p>
     <p class="lead">多くのページは、Cookieバナーやチャットの吹き出し、空の広告枠を表示します。Tidy Screenshotは撮影前にそれらを非表示にするので、ポップアップではなくページそのものが写ります。</p>
     <div class="cta">
       <a class="btn" href="https://chromewebstore.google.com/detail/tidy-screenshot-full-page/hnphaoicacdffinbiahcbacaanooompa?hl=ja">Chrome に追加（無料）</a>
@@ -117,20 +117,28 @@ h2.caps{font-size:14px;letter-spacing:.08em;color:var(--muted);margin:0 0 6px}
     <h2 class="caps">キャプチャ</h2>
     <ul>
       <li>ページ全体：スクロールしてページ全体を1枚の画像につなぎ合わせます</li>
+      <li>Webアプリやダッシュボード：固定メニューの横にある専用パネルで内容がスクロールする場合、そのパネルを最後までスクロールします。メニューとヘッダーは1回だけ写ります</li>
+      <li>非常に長いページは最大3つに分割：各パートをPNGで、またはページ全体を1つの連続したPDFで保存</li>
       <li>表示範囲</li>
       <li>範囲を選択：四角形、楕円（Shiftキーを押しながらで正方形・正円）、または自由形式。楕円や自由形式の外側はPNGで透明になります</li>
+      <li>要素を撮影：要素にポインターを合わせてクリック。↑ / ↓ で一回り大きい・小さい要素を選択。内部でスクロールする枠は中身ごと撮影します</li>
+      <li>3秒・5秒・10秒の遅延撮影：先にメニューを開けます。カウントダウンは画像に写りません</li>
       <li>主要な同意管理ツールのCookie同意バナー（クリックも同意もしません）、チャットの吹き出し、空の広告枠を非表示</li>
       <li>固定ヘッダーはページ途中で繰り返されず、遅延読み込みの画像は撮影前に読み込みます</li>
-      <li>ショートカット：<kbd>Alt+Shift+S</kbd>（ページ全体）、<kbd>Alt+Shift+V</kbd>（表示範囲）、<kbd>Alt+Shift+D</kbd>（範囲を選択）</li>
+      <li>ページを完全に撮影できない場合は、誤った画像を黙って保存せずにお知らせします</li>
+      <li>ショートカット：<kbd>Alt+Shift+S</kbd>（ページ全体）、<kbd>Alt+Shift+V</kbd>（表示範囲）、<kbd>Alt+Shift+D</kbd>（範囲を選択）。要素の撮影用キーはブラウザのショートカット設定で割り当てられます</li>
     </ul>
   </section>
 
   <section>
     <h2 class="caps">編集と共有</h2>
     <ul>
-      <li>内蔵エディター：切り抜き、ペン、矢印、枠、ハイライト、個人情報を隠すぼかし（モザイク）、テキスト。元に戻す・やり直しに対応</li>
+      <li>100%でくっきり：画面の1ピクセルに画像の1ピクセル。2%〜400%の倍率を直接入力、または1:1を押す</li>
       <li>拡大表示と全体表示をワンクリックで切り替え</li>
+      <li>内蔵エディター：切り抜き、ペン、矢印、枠、ハイライト、個人情報を隠すぼかし（モザイク）、テキスト。元に戻す・やり直しに対応</li>
       <li>PNG、JPG、複数ページのPDFでダウンロード、またはクリップボードにコピー</li>
+      <li>撮影後の動作：エディターを開く、すぐにPNGをダウンロード、またはクリップボードにコピー（設定で選択）</li>
+      <li>ファイル名に <code>{title}</code>、<code>{host}</code>、<code>{date}</code>、<code>{time}</code> を使用可能</li>
       <li>18言語のインターフェース</li>
     </ul>
   </section>
@@ -149,7 +157,9 @@ h2.caps{font-size:14px;letter-spacing:.08em;color:var(--muted);margin:0 0 6px}
     <h2 class="caps">ご注意</h2>
     <ul>
       <li>ブラウザ自体のページ（設定、拡張機能ストア）は、どの拡張機能でも撮影できません。</li>
-      <li>非常に長いページは、ブラウザが描画できる最大サイズである約32,000ピクセルで終わります。</li>
+      <li>極端に長いページは3パート（約96,000ピクセル）で終わります。途中で切れた場合はお知らせします。</li>
+      <li>「すぐにダウンロード」を選ぶと、結果のタブが背後で短時間開き、その後自動で閉じます。</li>
+      <li>Firefoxでは、撮影直後のコピーに「コピー」ボタンのクリックが1回必要な場合があります。</li>
     </ul>
   </section>
 

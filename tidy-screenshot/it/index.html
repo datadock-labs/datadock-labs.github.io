@@ -100,8 +100,8 @@ h2.caps{font-size:14px;letter-spacing:.08em;color:var(--muted);margin:0 0 6px}
   <div class="wrap">
     <nav><a href="/">&larr; DataDock Labs</a></nav>
     <div class="hero"><img src="/assets/tidy-screenshot.png" alt=""><h1>Screenshot pagina intera</h1></div>
-    <p class="lead">Screenshot puliti di qualsiasi pagina web con un clic: la pagina intera, ciò che vedi o solo la parte che selezioni.</p>
-    <p class="lead">Quasi ogni pagina ti accoglie con un banner dei cookie, una bolla di chat e uno spazio pubblicitario vuoto. Tidy Screenshot nasconde tutto questo prima della cattura, così lo screenshot mostra la pagina e non i popup.</p>
+    <p class="lead">Screenshot puliti di qualsiasi pagina web con un clic: la pagina intera, ciò che vedi, un&#x27;area che selezioni o un singolo elemento. Anche le app web il cui contenuto scorre in un pannello vengono catturate fino in fondo.</p>
+    <p class="lead">Quasi tutte le pagine ti accolgono con un banner dei cookie, una bolla di chat e uno spazio pubblicitario vuoto. Tidy Screenshot nasconde questo disordine prima della cattura, così lo screenshot mostra la pagina, non i pop-up.</p>
     <div class="cta">
       <a class="btn" href="https://chromewebstore.google.com/detail/tidy-screenshot-full-page/hnphaoicacdffinbiahcbacaanooompa?hl=it">Aggiungi a Chrome – gratis</a>
       <a class="btn ghost" href="https://microsoftedge.microsoft.com/addons/detail/jlecccfnklojjjmgcpjckaiblgcnnkgg">Aggiungi a Microsoft Edge</a>
@@ -116,21 +116,29 @@ h2.caps{font-size:14px;letter-spacing:.08em;color:var(--muted);margin:0 0 6px}
   <section>
     <h2 class="caps">CATTURA</h2>
     <ul>
-      <li>Pagina intera: scorre e unisce l’intera pagina in un’unica immagine</li>
+      <li>Pagina intera: scorre e unisce tutta la pagina in un&#x27;unica immagine</li>
+      <li>App web e dashboard: quando il contenuto scorre nel proprio pannello accanto a un menu fisso, Tidy fa scorrere quel pannello fino in fondo; menu e intestazione compaiono una volta sola</li>
+      <li>Le pagine molto lunghe vengono divise in 3 parti al massimo: salva ogni parte come PNG o l&#x27;intera pagina come un unico PDF continuo</li>
       <li>Area visibile</li>
-      <li>Seleziona un’area: rettangolo, ovale (tieni premuto Maiusc per un quadrato o un cerchio) o forma libera; fuori da un ovale o da una forma libera il PNG è trasparente</li>
-      <li>Nasconde i banner di consenso ai cookie delle piattaforme più diffuse (non si clicca né si accetta nulla), le bolle di chat e gli spazi pubblicitari vuoti</li>
+      <li>Seleziona un&#x27;area: rettangolo, ovale (tieni premuto Shift per un quadrato o un cerchio) o forma libera; fuori da un ovale o da una forma libera il PNG è trasparente</li>
+      <li>Cattura un elemento: puntalo e fai clic; ↑ / ↓ sceglie un elemento più ampio o più piccolo; un riquadro che scorre viene catturato con tutto il suo contenuto</li>
+      <li>Ritardo di 3, 5 o 10 secondi per aprire prima un menu; il conto alla rovescia non compare mai nell&#x27;immagine</li>
+      <li>Nasconde i banner di consenso ai cookie delle piattaforme più diffuse (non viene cliccato né accettato nulla), le bolle di chat e gli spazi pubblicitari vuoti</li>
       <li>Le intestazioni fisse non si ripetono lungo la pagina; le immagini a caricamento differito vengono caricate prima della cattura</li>
-      <li>Scorciatoie: <kbd>Alt+Shift+S</kbd> (pagina intera), <kbd>Alt+Shift+V</kbd> (area visibile), <kbd>Alt+Shift+D</kbd> (seleziona un’area)</li>
+      <li>Se una pagina non può essere catturata per intero, Tidy te lo dice invece di salvare in silenzio un&#x27;immagine sbagliata</li>
+      <li>Scorciatoie: <kbd>Alt+Shift+S</kbd> (pagina intera), <kbd>Alt+Shift+V</kbd> (area visibile), <kbd>Alt+Shift+D</kbd> (seleziona un&#x27;area); un tasto per la cattura di un elemento si può impostare nelle impostazioni delle scorciatoie del browser</li>
     </ul>
   </section>
 
   <section>
     <h2 class="caps">MODIFICA E CONDIVIDI</h2>
     <ul>
-      <li>Editor integrato: ritaglia, penna, freccia, riquadro, evidenzia, sfoca (pixel) per nascondere dati privati e testo, con annulla e ripeti</li>
-      <li>Passa dalla vista ravvicinata all’immagine intera in un attimo</li>
-      <li>Scarica in PNG, JPG o PDF multipagina, oppure copia negli appunti</li>
+      <li>Nitido al 100%: un pixel dell&#x27;immagine per pixel dello schermo; digita qualsiasi zoom dal 2% al 400% o premi 1:1</li>
+      <li>Passa con un clic dalla vista ravvicinata all&#x27;immagine intera</li>
+      <li>Editor integrato: ritaglio, penna, freccia, riquadro, evidenziatore, sfocatura (pixel) per nascondere dati privati e testo, con annulla e ripeti</li>
+      <li>Scarica in PNG, JPG o PDF di più pagine, oppure copia negli appunti</li>
+      <li>Dopo la cattura: apri l&#x27;editor, scarica subito un PNG o copia negli appunti (a scelta nelle impostazioni)</li>
+      <li>Nomi file con <code>{title}</code>, <code>{host}</code>, <code>{date}</code> e <code>{time}</code></li>
       <li>Interfaccia in 18 lingue</li>
     </ul>
   </section>
@@ -138,23 +146,25 @@ h2.caps{font-size:14px;letter-spacing:.08em;color:var(--muted);margin:0 0 6px}
   <section>
     <h2 class="caps">PRIVACY FIN DALLA PROGETTAZIONE</h2>
     <ul>
-      <li>Gratis, senza account e senza registrazione</li>
+      <li>Gratis, senza account, senza registrazione</li>
       <li>Nessuna analisi, nessun tracciamento</li>
       <li>Screenshot e modifiche non lasciano mai il tuo browser</li>
-      <li>Autorizzazioni minime: solo la scheda che scegli, solo quando fai clic</li>
+      <li>Permessi minimi: solo la scheda che scegli, solo quando fai clic</li>
     </ul>
   </section>
 
   <section>
     <h2 class="caps">BUONO A SAPERSI</h2>
     <ul>
-      <li>Nessuna estensione può catturare le pagine del browser stesso (impostazioni, store delle estensioni).</li>
-      <li>Le pagine estremamente lunghe si fermano a circa 32.000 pixel, l’immagine più grande che i browser possono disegnare.</li>
+      <li>Le pagine del browser (impostazioni, negozi di estensioni) non possono essere catturate da nessuna estensione.</li>
+      <li>Le pagine estremamente lunghe si fermano dopo 3 parti (circa 96.000 pixel); Tidy ti avvisa quando una pagina è stata tagliata.</li>
+      <li>Con «scarica subito», la scheda del risultato si apre per un attimo in secondo piano e poi si chiude da sola.</li>
+      <li>In Firefox, copiare subito dopo una cattura può richiedere un clic su Copia.</li>
     </ul>
   </section>
 
   <section>
-    <p class="muted">Realizzato da DataDock Labs. Domande o una pagina che non viene bene? <a href="mailto:datadocklabs@gmail.com">datadocklabs@gmail.com</a></p>
+    <p class="muted">Realizzato da DataDock Labs. Domande o una pagina che non viene bene: <a href="mailto:datadocklabs@gmail.com">datadocklabs@gmail.com</a></p>
     <p class="muted"><a href="/privacy/tidy-screenshot.html" hreflang="en">Informativa sulla privacy (in inglese)</a> · <a href="/tidy-screenshot/" hreflang="en">Come funziona e domande frequenti (in inglese)</a></p>
   </section>
 

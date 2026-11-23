@@ -100,7 +100,7 @@ h2.caps{font-size:14px;letter-spacing:.08em;color:var(--muted);margin:0 0 6px}
   <div class="wrap">
     <nav><a href="/">&larr; DataDock Labs</a></nav>
     <div class="hero"><img src="/assets/tidy-screenshot.png" alt=""><h1>Chụp toàn bộ trang web</h1></div>
-    <p class="lead">Ảnh chụp màn hình gọn gàng của bất kỳ trang web nào chỉ với một cú nhấp: toàn bộ trang, phần bạn đang thấy hoặc chỉ phần bạn chọn.</p>
+    <p class="lead">Ảnh chụp màn hình gọn gàng của bất kỳ trang web nào chỉ với một cú nhấp: toàn bộ trang, phần bạn đang thấy, vùng bạn chọn hoặc một phần tử. Ứng dụng web có nội dung cuộn bên trong một khung cũng được chụp đến cuối.</p>
     <p class="lead">Hầu hết các trang đều chào bạn bằng thông báo cookie, bong bóng chat và ô quảng cáo trống. Tidy Screenshot ẩn những thứ đó trước khi chụp, để ảnh chụp hiển thị chính trang web chứ không phải các cửa sổ bật lên.</p>
     <div class="cta">
       <a class="btn" href="https://chromewebstore.google.com/detail/tidy-screenshot-full-page/hnphaoicacdffinbiahcbacaanooompa?hl=vi">Thêm vào Chrome – miễn phí</a>
@@ -117,20 +117,28 @@ h2.caps{font-size:14px;letter-spacing:.08em;color:var(--muted);margin:0 0 6px}
     <h2 class="caps">CHỤP</h2>
     <ul>
       <li>Toàn trang: cuộn và ghép toàn bộ trang thành một ảnh</li>
+      <li>Ứng dụng web và bảng điều khiển: khi nội dung cuộn trong khung riêng cạnh một menu cố định, Tidy cuộn khung đó đến cuối; menu và tiêu đề chỉ xuất hiện một lần</li>
+      <li>Trang rất dài được chia tối đa thành 3 phần: lưu từng phần dạng PNG, hoặc cả trang thành một PDF liền mạch</li>
       <li>Vùng hiển thị</li>
       <li>Chọn vùng: hình chữ nhật, hình bầu dục (giữ Shift để có hình vuông hoặc hình tròn) hoặc vùng tự do; bên ngoài hình bầu dục hoặc vùng tự do, ảnh PNG trong suốt</li>
+      <li>Chụp phần tử: trỏ vào và nhấp; ↑ / ↓ chọn phần tử lớn hơn hoặc nhỏ hơn; khung có thanh cuộn riêng được chụp với toàn bộ nội dung</li>
+      <li>Hẹn giờ 3, 5 hoặc 10 giây để bạn mở menu trước; bộ đếm ngược không bao giờ xuất hiện trong ảnh</li>
       <li>Ẩn thông báo đồng ý cookie của các nền tảng phổ biến (không nhấp hay chấp nhận gì cả), bong bóng chat và ô quảng cáo trống</li>
       <li>Tiêu đề cố định không lặp lại dọc trang; ảnh tải chậm được tải trước khi chụp</li>
-      <li>Phím tắt: <kbd>Alt+Shift+S</kbd> (toàn trang), <kbd>Alt+Shift+V</kbd> (vùng hiển thị), <kbd>Alt+Shift+D</kbd> (chọn vùng)</li>
+      <li>Nếu không chụp được trọn vẹn một trang, Tidy sẽ báo cho bạn thay vì lặng lẽ lưu một ảnh sai</li>
+      <li>Phím tắt: <kbd>Alt+Shift+S</kbd> (toàn trang), <kbd>Alt+Shift+V</kbd> (vùng hiển thị), <kbd>Alt+Shift+D</kbd> (chọn vùng); phím cho chụp phần tử có thể đặt trong cài đặt phím tắt của trình duyệt</li>
     </ul>
   </section>
 
   <section>
     <h2 class="caps">CHỈNH SỬA VÀ CHIA SẺ</h2>
     <ul>
-      <li>Trình chỉnh sửa tích hợp: cắt, bút, mũi tên, khung, tô sáng, làm mờ (khảm) để che thông tin riêng tư và văn bản, có hoàn tác và làm lại</li>
+      <li>Sắc nét ở 100%: một điểm ảnh của ảnh cho mỗi điểm ảnh màn hình; nhập mức thu phóng bất kỳ từ 2% đến 400% hoặc nhấn 1:1</li>
       <li>Chuyển giữa chế độ xem cận cảnh và toàn bộ ảnh chỉ với một cú nhấp</li>
+      <li>Trình chỉnh sửa tích hợp: cắt, bút, mũi tên, khung, tô sáng, làm mờ (khảm) để che thông tin riêng tư và văn bản, có hoàn tác và làm lại</li>
       <li>Tải xuống dạng PNG, JPG hoặc PDF nhiều trang, hoặc sao chép vào bảng nhớ tạm</li>
+      <li>Sau khi chụp: mở trình chỉnh sửa, tải PNG xuống ngay hoặc sao chép vào bảng nhớ tạm (chọn trong cài đặt)</li>
+      <li>Tên tệp từ <code>{title}</code>, <code>{host}</code>, <code>{date}</code> và <code>{time}</code></li>
       <li>Giao diện 18 ngôn ngữ</li>
     </ul>
   </section>
@@ -149,7 +157,9 @@ h2.caps{font-size:14px;letter-spacing:.08em;color:var(--muted);margin:0 0 6px}
     <h2 class="caps">NÊN BIẾT</h2>
     <ul>
       <li>Không tiện ích nào chụp được các trang của chính trình duyệt (cài đặt, cửa hàng tiện ích).</li>
-      <li>Các trang cực dài dừng ở khoảng 32.000 điểm ảnh, kích thước ảnh lớn nhất mà trình duyệt có thể vẽ.</li>
+      <li>Các trang cực dài dừng lại sau 3 phần (khoảng 96.000 điểm ảnh); Tidy báo cho bạn khi trang bị cắt.</li>
+      <li>Khi chọn &quot;tải xuống ngay&quot;, thẻ kết quả mở thoáng qua trong nền rồi tự đóng.</li>
+      <li>Trên Firefox, sao chép ngay sau khi chụp có thể cần nhấp một lần vào Sao chép.</li>
     </ul>
   </section>
 

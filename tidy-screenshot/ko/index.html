@@ -100,7 +100,7 @@ h2.caps{font-size:14px;letter-spacing:.08em;color:var(--muted);margin:0 0 6px}
   <div class="wrap">
     <nav><a href="/">&larr; DataDock Labs</a></nav>
     <div class="hero"><img src="/assets/tidy-screenshot.png" alt=""><h1>전체 페이지 스크린샷, 쿠키 배너 없이</h1></div>
-    <p class="lead">클릭 한 번으로 모든 웹페이지의 깔끔한 스크린샷을 찍으세요. 전체 페이지, 보이는 영역 또는 선택한 부분만 캡처할 수 있습니다.</p>
+    <p class="lead">클릭 한 번으로 모든 웹페이지의 깔끔한 스크린샷을 찍으세요. 전체 페이지, 보이는 영역, 선택한 부분 또는 요소 하나만 캡처할 수 있습니다. 패널 안에서 스크롤되는 웹 앱도 끝까지 캡처합니다.</p>
     <p class="lead">대부분의 페이지는 쿠키 배너, 채팅 말풍선, 빈 광고 영역을 띄웁니다. Tidy Screenshot은 캡처 전에 이런 요소를 숨겨, 팝업이 아닌 페이지 자체를 담아 줍니다.</p>
     <div class="cta">
       <a class="btn" href="https://chromewebstore.google.com/detail/tidy-screenshot-full-page/hnphaoicacdffinbiahcbacaanooompa?hl=ko">Chrome에 추가 – 무료</a>
@@ -117,20 +117,28 @@ h2.caps{font-size:14px;letter-spacing:.08em;color:var(--muted);margin:0 0 6px}
     <h2 class="caps">캡처</h2>
     <ul>
       <li>전체 페이지: 페이지를 스크롤하며 하나의 이미지로 이어 붙입니다</li>
+      <li>웹 앱과 대시보드: 고정 메뉴 옆의 자체 패널에서 내용이 스크롤되면 Tidy가 그 패널을 끝까지 스크롤합니다. 메뉴와 헤더는 한 번만 나옵니다</li>
+      <li>매우 긴 페이지는 최대 3개로 나뉩니다. 각 부분을 PNG로, 또는 페이지 전체를 이어진 PDF 하나로 저장하세요</li>
       <li>보이는 영역</li>
       <li>영역 선택: 사각형, 타원(Shift를 누르면 정사각형·원), 자유형. 타원이나 자유형 바깥은 PNG에서 투명합니다</li>
+      <li>요소 캡처: 요소를 가리키고 클릭하세요. ↑ / ↓로 더 큰 요소나 더 작은 요소를 고릅니다. 자체 스크롤이 있는 상자는 내용 전체를 캡처합니다</li>
+      <li>3초, 5초, 10초 지연: 먼저 메뉴를 열 수 있습니다. 카운트다운은 이미지에 절대 찍히지 않습니다</li>
       <li>주요 동의 관리 플랫폼의 쿠키 동의 배너(아무것도 클릭하거나 동의하지 않음), 채팅 말풍선, 빈 광고 영역 숨기기</li>
       <li>고정 헤더가 페이지 중간에 반복되지 않고, 지연 로딩 이미지는 캡처 전에 불러옵니다</li>
-      <li>단축키: <kbd>Alt+Shift+S</kbd>(전체 페이지), <kbd>Alt+Shift+V</kbd>(보이는 영역), <kbd>Alt+Shift+D</kbd>(영역 선택)</li>
+      <li>페이지를 완전히 캡처할 수 없으면 잘못된 이미지를 조용히 저장하지 않고 알려 드립니다</li>
+      <li>단축키: <kbd>Alt+Shift+S</kbd>(전체 페이지), <kbd>Alt+Shift+V</kbd>(보이는 영역), <kbd>Alt+Shift+D</kbd>(영역 선택). 요소 캡처 키는 브라우저의 단축키 설정에서 지정할 수 있습니다</li>
     </ul>
   </section>
 
   <section>
     <h2 class="caps">편집 및 공유</h2>
     <ul>
-      <li>내장 편집기: 자르기, 펜, 화살표, 상자, 강조, 개인정보를 가리는 흐리게(모자이크), 텍스트. 실행 취소·다시 실행 지원</li>
+      <li>100%에서 선명하게: 화면 픽셀 하나에 이미지 픽셀 하나. 2%~400% 배율을 직접 입력하거나 1:1을 누르세요</li>
       <li>크게 보기와 전체 이미지 보기를 한 번에 전환</li>
+      <li>내장 편집기: 자르기, 펜, 화살표, 상자, 강조, 개인정보를 가리는 흐리게(모자이크), 텍스트. 실행 취소·다시 실행 지원</li>
       <li>PNG, JPG, 여러 페이지 PDF로 다운로드하거나 클립보드에 복사</li>
+      <li>캡처 후 동작: 편집기 열기, PNG 바로 다운로드, 클립보드에 복사(설정에서 선택)</li>
+      <li>파일 이름에 <code>{title}</code>, <code>{host}</code>, <code>{date}</code>, <code>{time}</code> 사용</li>
       <li>18개 언어 인터페이스</li>
     </ul>
   </section>
@@ -149,7 +157,9 @@ h2.caps{font-size:14px;letter-spacing:.08em;color:var(--muted);margin:0 0 6px}
     <h2 class="caps">알아 두세요</h2>
     <ul>
       <li>브라우저 자체 페이지(설정, 확장 프로그램 스토어)는 어떤 확장 프로그램도 캡처할 수 없습니다.</li>
-      <li>매우 긴 페이지는 브라우저가 그릴 수 있는 최대 크기인 약 32,000픽셀에서 끝납니다.</li>
+      <li>극단적으로 긴 페이지는 3개 부분(약 96,000픽셀)에서 끝납니다. 페이지가 잘리면 알려 드립니다.</li>
+      <li>&#x27;바로 다운로드&#x27;를 선택하면 결과 탭이 뒤에서 잠깐 열렸다가 저절로 닫힙니다.</li>
+      <li>Firefox에서는 캡처 직후 복사할 때 &#x27;복사&#x27;를 한 번 클릭해야 할 수 있습니다.</li>
     </ul>
   </section>
 

@@ -100,8 +100,8 @@ h2.caps{font-size:14px;letter-spacing:.08em;color:var(--muted);margin:0 0 6px}
   <div class="wrap">
     <nav><a href="/">&larr; DataDock Labs</a></nav>
     <div class="hero"><img src="/assets/tidy-screenshot.png" alt=""><h1>Zrzut całej strony</h1></div>
-    <p class="lead">Czyste zrzuty ekranu dowolnej strony jednym kliknięciem: cała strona, to, co widzisz, albo tylko zaznaczony fragment.</p>
-    <p class="lead">Prawie każda strona wita cię banerem cookie, dymkiem czatu i pustym miejscem po reklamie. Tidy Screenshot ukrywa ten bałagan przed zrzutem, więc na zrzucie widać samą stronę, a nie wyskakujące okienka.</p>
+    <p class="lead">Czyste zrzuty ekranu dowolnej strony internetowej jednym kliknięciem: cała strona, to, co widzisz, wybrany obszar albo pojedynczy element. Aplikacje webowe, których treść przewija się w panelu, też są przechwytywane do końca.</p>
+    <p class="lead">Większość stron wita Cię banerem cookie, dymkiem czatu i pustym miejscem na reklamę. Tidy Screenshot ukrywa ten bałagan przed zrobieniem zrzutu, więc zrzut pokazuje samą stronę, a nie wyskakujące okienka.</p>
     <div class="cta">
       <a class="btn" href="https://chromewebstore.google.com/detail/tidy-screenshot-full-page/hnphaoicacdffinbiahcbacaanooompa?hl=pl">Dodaj do Chrome – za darmo</a>
       <a class="btn ghost" href="https://microsoftedge.microsoft.com/addons/detail/jlecccfnklojjjmgcpjckaiblgcnnkgg">Dodaj do Microsoft Edge</a>
@@ -116,21 +116,29 @@ h2.caps{font-size:14px;letter-spacing:.08em;color:var(--muted);margin:0 0 6px}
   <section>
     <h2 class="caps">ZRZUT</h2>
     <ul>
-      <li>Cała strona: przewija i łączy całą stronę w jeden obraz</li>
+      <li>Cała strona: przewija i skleja całą stronę w jeden obraz</li>
+      <li>Aplikacje webowe i pulpity: gdy treść przewija się we własnym panelu obok stałego menu, Tidy przewija ten panel do końca; menu i nagłówek pojawiają się raz</li>
+      <li>Bardzo długie strony są dzielone na maksymalnie 3 części: zapisz każdą część jako PNG albo całą stronę jako jeden ciągły PDF</li>
       <li>Widoczny obszar</li>
-      <li>Zaznacz obszar: prostokąt, owal (przytrzymaj Shift, aby uzyskać kwadrat lub koło) albo dowolny kształt; poza owalem lub dowolnym kształtem PNG jest przezroczysty</li>
-      <li>Ukrywa banery zgody na cookie popularnych platform (niczego nie klika ani nie akceptuje), dymki czatu i puste miejsca po reklamach</li>
-      <li>Przyklejone nagłówki nie powtarzają się na stronie; leniwie ładowane obrazy są wczytywane przed zrzutem</li>
-      <li>Skróty: <kbd>Alt+Shift+S</kbd> (cała strona), <kbd>Alt+Shift+V</kbd> (widoczny obszar), <kbd>Alt+Shift+D</kbd> (zaznacz obszar)</li>
+      <li>Zaznacz obszar: prostokąt, owal (przytrzymaj Shift, aby uzyskać kwadrat lub koło) albo kształt odręczny; poza owalem lub kształtem odręcznym PNG jest przezroczysty</li>
+      <li>Zrzut elementu: wskaż go i kliknij; ↑ / ↓ wybiera większy lub mniejszy element; pole z własnym przewijaniem jest zapisywane z całą zawartością</li>
+      <li>Opóźnienie 3, 5 lub 10 sekund, aby najpierw otworzyć menu; odliczanie nigdy nie trafia do obrazu</li>
+      <li>Ukrywa banery zgody na cookie popularnych platform (nic nie jest klikane ani akceptowane), dymki czatu i puste miejsca na reklamy</li>
+      <li>Przyklejone nagłówki nie powtarzają się na stronie; leniwie ładowane obrazy wczytują się przed zrzutem</li>
+      <li>Jeśli strony nie da się przechwycić w całości, Tidy o tym informuje, zamiast po cichu zapisać błędny obraz</li>
+      <li>Skróty: <kbd>Alt+Shift+S</kbd> (cała strona), <kbd>Alt+Shift+V</kbd> (widoczny obszar), <kbd>Alt+Shift+D</kbd> (zaznacz obszar); klawisz dla zrzutu elementu można ustawić w ustawieniach skrótów przeglądarki</li>
     </ul>
   </section>
 
   <section>
     <h2 class="caps">EDYCJA I UDOSTĘPNIANIE</h2>
     <ul>
-      <li>Wbudowany edytor: przycinanie, pióro, strzałka, ramka, zakreślacz, rozmycie (pikselizacja) do ukrywania prywatnych danych i tekst, z cofaniem i ponawianiem</li>
-      <li>Przełączaj między zbliżeniem a całym obrazem naraz</li>
+      <li>Ostro przy 100%: jeden piksel obrazu na piksel ekranu; wpisz dowolne powiększenie od 2% do 400% lub naciśnij 1:1</li>
+      <li>Jednym kliknięciem przełączaj między zbliżeniem a całym obrazem</li>
+      <li>Wbudowany edytor: kadrowanie, pióro, strzałka, ramka, zakreślacz, rozmycie (pikselizacja) do ukrycia prywatnych danych i tekst, z cofaniem i ponawianiem</li>
       <li>Pobierz jako PNG, JPG lub wielostronicowy PDF albo skopiuj do schowka</li>
+      <li>Po zrzucie: otwórz edytor, od razu pobierz PNG albo skopiuj do schowka (wybór w ustawieniach)</li>
+      <li>Nazwy plików z <code>{title}</code>, <code>{host}</code>, <code>{date}</code> i <code>{time}</code></li>
       <li>Interfejs w 18 językach</li>
     </ul>
   </section>
@@ -138,7 +146,7 @@ h2.caps{font-size:14px;letter-spacing:.08em;color:var(--muted);margin:0 0 6px}
   <section>
     <h2 class="caps">PRYWATNOŚĆ W STANDARDZIE</h2>
     <ul>
-      <li>Za darmo, bez konta i bez rejestracji</li>
+      <li>Za darmo, bez konta i rejestracji</li>
       <li>Bez analityki i śledzenia</li>
       <li>Zrzuty i zmiany nigdy nie opuszczają przeglądarki</li>
       <li>Minimalne uprawnienia: tylko wybrana karta, tylko po kliknięciu</li>
@@ -148,13 +156,15 @@ h2.caps{font-size:14px;letter-spacing:.08em;color:var(--muted);margin:0 0 6px}
   <section>
     <h2 class="caps">WARTO WIEDZIEĆ</h2>
     <ul>
-      <li>Żadne rozszerzenie nie może zrobić zrzutu stron samej przeglądarki (ustawienia, sklepy z rozszerzeniami).</li>
-      <li>Bardzo długie strony kończą się na około 32 000 pikseli, największym obrazie, jaki potrafią narysować przeglądarki.</li>
+      <li>Stron samej przeglądarki (ustawienia, sklepy z rozszerzeniami) nie może przechwycić żadne rozszerzenie.</li>
+      <li>Skrajnie długie strony kończą się po 3 częściach (około 96 000 pikseli); Tidy informuje, gdy strona została ucięta.</li>
+      <li>Przy „pobierz od razu” karta z wynikiem otwiera się na chwilę w tle, a potem sama się zamyka.</li>
+      <li>W przeglądarce Firefox kopiowanie tuż po zrzucie może wymagać jednego kliknięcia w Kopiuj.</li>
     </ul>
   </section>
 
   <section>
-    <p class="muted">Tworzy DataDock Labs. Pytania albo strona, która nie wychodzi dobrze? <a href="mailto:datadocklabs@gmail.com">datadocklabs@gmail.com</a></p>
+    <p class="muted">Stworzone przez DataDock Labs. Pytania albo strona, która nie wychodzi dobrze: <a href="mailto:datadocklabs@gmail.com">datadocklabs@gmail.com</a></p>
     <p class="muted"><a href="/privacy/tidy-screenshot.html" hreflang="en">Polityka prywatności (po angielsku)</a> · <a href="/tidy-screenshot/" hreflang="en">Jak to działa i najczęstsze pytania (po angielsku)</a></p>
   </section>
 

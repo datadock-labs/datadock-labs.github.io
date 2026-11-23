@@ -100,8 +100,8 @@ h2.caps{font-size:14px;letter-spacing:.08em;color:var(--muted);margin:0 0 6px}
   <div class="wrap">
     <nav><a href="/">&larr; DataDock Labs</a></nav>
     <div class="hero"><img src="/assets/tidy-screenshot.png" alt=""><h1>Screenshot hele pagina</h1></div>
-    <p class="lead">Nette screenshots van elke webpagina met één klik: de hele pagina, wat je ziet of alleen het deel dat je selecteert.</p>
-    <p class="lead">Bijna elke pagina begroet je met een cookiemelding, een chatbubbel en een leeg advertentievak. Tidy Screenshot verbergt die rommel vóór de opname, zodat je screenshot de pagina zelf laat zien en niet de pop-ups.</p>
+    <p class="lead">Schone screenshots van elke webpagina met één klik: de hele pagina, wat je ziet, een gebied dat je kiest of één element. Ook web-apps waarvan de inhoud in een paneel scrolt, worden tot het einde vastgelegd.</p>
+    <p class="lead">De meeste pagina&#x27;s begroeten je met een cookiebanner, een chatballon en een leeg advertentievak. Tidy Screenshot verbergt die rommel vóór de opname, zodat je screenshot de pagina zelf toont en niet de pop-ups.</p>
     <div class="cta">
       <a class="btn" href="https://chromewebstore.google.com/detail/tidy-screenshot-full-page/hnphaoicacdffinbiahcbacaanooompa?hl=nl">Toevoegen aan Chrome – gratis</a>
       <a class="btn ghost" href="https://microsoftedge.microsoft.com/addons/detail/jlecccfnklojjjmgcpjckaiblgcnnkgg">Toevoegen aan Microsoft Edge</a>
@@ -117,20 +117,28 @@ h2.caps{font-size:14px;letter-spacing:.08em;color:var(--muted);margin:0 0 6px}
     <h2 class="caps">VASTLEGGEN</h2>
     <ul>
       <li>Hele pagina: scrolt en voegt de hele pagina samen tot één afbeelding</li>
+      <li>Web-apps en dashboards: scrolt de inhoud in een eigen paneel naast een vast menu, dan scrolt Tidy dat paneel tot het einde; menu en kop verschijnen één keer</li>
+      <li>Zeer lange pagina&#x27;s worden in maximaal 3 delen gesplitst: bewaar elk deel als PNG of de hele pagina als één doorlopende pdf</li>
       <li>Zichtbaar gebied</li>
-      <li>Een gebied selecteren: rechthoek, ovaal (houd Shift ingedrukt voor een vierkant of cirkel) of vrije vorm; buiten een ovaal of vrije vorm is de PNG transparant</li>
-      <li>Verbergt cookietoestemmingsmeldingen van gangbare toestemmingsplatforms (er wordt niets aangeklikt of geaccepteerd), chatbubbels en lege advertentievakken</li>
-      <li>Vaste kopteksten worden niet herhaald; uitgestelde afbeeldingen worden vóór de opname geladen</li>
-      <li>Sneltoetsen: <kbd>Alt+Shift+S</kbd> (hele pagina), <kbd>Alt+Shift+V</kbd> (zichtbaar gebied), <kbd>Alt+Shift+D</kbd> (gebied selecteren)</li>
+      <li>Gebied selecteren: rechthoek, ovaal (houd Shift ingedrukt voor een vierkant of cirkel) of vrije vorm; buiten een ovaal of vrije vorm is de PNG transparant</li>
+      <li>Element vastleggen: wijs het aan en klik; ↑ / ↓ kiest een groter of kleiner element; een vak dat zelf scrolt, wordt met al zijn inhoud vastgelegd</li>
+      <li>Vertraging van 3, 5 of 10 seconden, zodat je eerst een menu kunt openen; het aftellen komt nooit in de afbeelding</li>
+      <li>Verbergt cookiebanners van gangbare toestemmingsplatforms (er wordt niets aangeklikt of geaccepteerd), chatballonnen en lege advertentievakken</li>
+      <li>Vaste kopteksten herhalen zich niet over de pagina; uitgestelde afbeeldingen worden vóór de opname geladen</li>
+      <li>Kan een pagina niet volledig worden vastgelegd, dan zegt Tidy dat, in plaats van stil een verkeerde afbeelding op te slaan</li>
+      <li>Sneltoetsen: <kbd>Alt+Shift+S</kbd> (hele pagina), <kbd>Alt+Shift+V</kbd> (zichtbaar gebied), <kbd>Alt+Shift+D</kbd> (gebied selecteren); een toets voor element vastleggen stel je in bij de sneltoetsinstellingen van de browser</li>
     </ul>
   </section>
 
   <section>
     <h2 class="caps">BEWERKEN EN DELEN</h2>
     <ul>
+      <li>Scherp op 100%: één beeldpixel per schermpixel; typ elke zoom van 2% tot 400% of druk op 1:1</li>
+      <li>Met één klik wisselen tussen close-up en de hele afbeelding</li>
       <li>Ingebouwde editor: bijsnijden, pen, pijl, kader, markeren, vervagen (pixeleren) om privégegevens te verbergen, en tekst, met ongedaan maken en opnieuw</li>
-      <li>Wissel tussen een close-up en de hele afbeelding in één keer</li>
-      <li>Download als PNG, JPG of pdf met meerdere pagina&#x27;s, of kopieer naar het klembord</li>
+      <li>Download als PNG, JPG of pdf van meerdere pagina&#x27;s, of kopieer naar het klembord</li>
+      <li>Na de opname: de editor openen, meteen een PNG downloaden of naar het klembord kopiëren (keuze in de instellingen)</li>
+      <li>Bestandsnamen met <code>{title}</code>, <code>{host}</code>, <code>{date}</code> en <code>{time}</code></li>
       <li>Interface in 18 talen</li>
     </ul>
   </section>
@@ -138,10 +146,10 @@ h2.caps{font-size:14px;letter-spacing:.08em;color:var(--muted);margin:0 0 6px}
   <section>
     <h2 class="caps">PRIVACY VOOROP</h2>
     <ul>
-      <li>Gratis, geen account, geen registratie</li>
-      <li>Geen analytics, geen tracking</li>
+      <li>Gratis, geen account, geen aanmelding</li>
+      <li>Geen analyses, geen tracking</li>
       <li>Screenshots en bewerkingen verlaten nooit je browser</li>
-      <li>Minimale rechten: alleen het tabblad dat je kiest, alleen wanneer je klikt</li>
+      <li>Minimale rechten: alleen het tabblad dat je kiest, alleen als je klikt</li>
     </ul>
   </section>
 
@@ -149,12 +157,14 @@ h2.caps{font-size:14px;letter-spacing:.08em;color:var(--muted);margin:0 0 6px}
     <h2 class="caps">GOED OM TE WETEN</h2>
     <ul>
       <li>Browserpagina&#x27;s (instellingen, extensiewinkels) kan geen enkele extensie vastleggen.</li>
-      <li>Extreem lange pagina&#x27;s stoppen bij ongeveer 32.000 pixels, de grootste afbeelding die browsers kunnen tekenen.</li>
+      <li>Extreem lange pagina&#x27;s stoppen na 3 delen (ongeveer 96.000 pixels); Tidy meldt het als een pagina is afgekapt.</li>
+      <li>Met &#x27;meteen downloaden&#x27; opent het resultaattabblad kort op de achtergrond en sluit daarna vanzelf.</li>
+      <li>In Firefox kan kopiëren direct na een opname één klik op Kopiëren vragen.</li>
     </ul>
   </section>
 
   <section>
-    <p class="muted">Gemaakt door DataDock Labs. Vragen of een pagina die niet goed uitkomt? <a href="mailto:datadocklabs@gmail.com">datadocklabs@gmail.com</a></p>
+    <p class="muted">Gemaakt door DataDock Labs. Vragen of een pagina die niet goed uitkomt: <a href="mailto:datadocklabs@gmail.com">datadocklabs@gmail.com</a></p>
     <p class="muted"><a href="/privacy/tidy-screenshot.html" hreflang="en">Privacybeleid (in het Engels)</a> · <a href="/tidy-screenshot/" hreflang="en">Hoe het werkt en veelgestelde vragen (in het Engels)</a></p>
   </section>
 

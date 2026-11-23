@@ -100,8 +100,8 @@ h2.caps{font-size:14px;letter-spacing:.08em;color:var(--muted);margin:0 0 6px}
   <div class="wrap">
     <nav><a href="/">&larr; DataDock Labs</a></nav>
     <div class="hero"><img src="/assets/tidy-screenshot.png" alt=""><h1>Ganze Seite aufnehmen</h1></div>
-    <p class="lead">Saubere Screenshots jeder Webseite mit einem Klick: die ganze Seite, den sichtbaren Bereich oder nur den Teil, den Sie auswählen.</p>
-    <p class="lead">Fast jede Seite begrüßt Sie mit einem Cookie-Banner, einer Chat-Blase und einer leeren Werbefläche. Tidy Screenshot blendet all das vor der Aufnahme aus, damit Ihr Screenshot die Seite selbst zeigt und nicht die Pop-ups.</p>
+    <p class="lead">Saubere Screenshots jeder Webseite mit einem Klick: die ganze Seite, der sichtbare Bereich, ein ausgewählter Bereich oder ein einzelnes Element. Auch Web-Apps, deren Inhalt in einem eigenen Bereich scrollt, werden bis zum Ende erfasst.</p>
+    <p class="lead">Die meisten Seiten begrüßen Sie mit einem Cookie-Banner, einer Chat-Blase und einer leeren Werbefläche. Tidy Screenshot blendet diesen Ballast vor der Aufnahme aus, damit Ihr Screenshot die Seite selbst zeigt, nicht die Pop-ups.</p>
     <div class="cta">
       <a class="btn" href="https://chromewebstore.google.com/detail/tidy-screenshot-full-page/hnphaoicacdffinbiahcbacaanooompa?hl=de">Zu Chrome hinzufügen – kostenlos</a>
       <a class="btn ghost" href="https://microsoftedge.microsoft.com/addons/detail/jlecccfnklojjjmgcpjckaiblgcnnkgg">Zu Microsoft Edge hinzufügen</a>
@@ -116,21 +116,29 @@ h2.caps{font-size:14px;letter-spacing:.08em;color:var(--muted);margin:0 0 6px}
   <section>
     <h2 class="caps">AUFNAHME</h2>
     <ul>
-      <li>Ganze Seite: scrollt die Seite und setzt sie zu einem Bild zusammen</li>
+      <li>Ganze Seite: scrollt und fügt die ganze Seite zu einem Bild zusammen</li>
+      <li>Web-Apps und Dashboards: Scrollt der Inhalt in einem eigenen Bereich neben einem festen Menü, scrollt Tidy diesen Bereich bis zum Ende; Menü und Kopfzeile erscheinen nur einmal</li>
+      <li>Sehr lange Seiten werden in bis zu 3 Teile geteilt: jeden Teil als PNG speichern oder die ganze Seite als ein durchgehendes PDF</li>
       <li>Sichtbarer Bereich</li>
-      <li>Bereich auswählen: Rechteck, Oval (Shift gedrückt halten für Quadrat oder Kreis) oder freihand; außerhalb eines Ovals oder einer Freihandform ist das PNG transparent</li>
-      <li>Blendet Cookie-Einwilligungsbanner gängiger Consent-Plattformen aus (es wird nichts angeklickt oder akzeptiert), dazu Chat-Blasen und leere Werbeflächen</li>
-      <li>Fixierte Kopfzeilen wiederholen sich nicht; nachgeladene Bilder werden vor der Aufnahme geladen</li>
-      <li>Tastenkürzel: <kbd>Alt+Shift+S</kbd> (ganze Seite), <kbd>Alt+Shift+V</kbd> (sichtbarer Bereich), <kbd>Alt+Shift+D</kbd> (Bereich auswählen)</li>
+      <li>Bereich auswählen: Rechteck, Oval (Umschalttaste gedrückt halten für Quadrat oder Kreis) oder freie Form; außerhalb eines Ovals oder einer freien Form ist das PNG transparent</li>
+      <li>Element aufnehmen: darauf zeigen und klicken; ↑ / ↓ wählt ein größeres oder kleineres Element; ein Kasten, der selbst scrollt, wird mit seinem ganzen Inhalt aufgenommen</li>
+      <li>Verzögerung von 3, 5 oder 10 Sekunden, damit Sie zuerst ein Menü öffnen können; der Countdown erscheint nie im Bild</li>
+      <li>Blendet Cookie-Banner gängiger Consent-Plattformen (es wird nichts angeklickt oder akzeptiert), Chat-Blasen und leere Werbeflächen aus</li>
+      <li>Feste Kopfzeilen wiederholen sich nicht auf der Seite; nachladende Bilder werden vor der Aufnahme geladen</li>
+      <li>Lässt sich eine Seite nicht vollständig aufnehmen, sagt Tidy es Ihnen, statt still ein falsches Bild zu speichern</li>
+      <li>Tastenkürzel: <kbd>Alt+Shift+S</kbd> (ganze Seite), <kbd>Alt+Shift+V</kbd> (sichtbarer Bereich), <kbd>Alt+Shift+D</kbd> (Bereich auswählen); eine Taste für die Elementaufnahme lässt sich in den Tastenkürzel-Einstellungen des Browsers festlegen</li>
     </ul>
   </section>
 
   <section>
     <h2 class="caps">BEARBEITEN UND TEILEN</h2>
     <ul>
-      <li>Eingebauter Editor: Zuschneiden, Stift, Pfeil, Rahmen, Markieren, Verpixeln zum Verbergen privater Angaben und Text, mit Rückgängig und Wiederholen</li>
-      <li>Zwischen Nahansicht und ganzem Bild wechseln</li>
+      <li>Scharf bei 100 %: ein Bildpixel pro Bildschirmpixel; beliebigen Zoom von 2 % bis 400 % eintippen oder 1:1 drücken</li>
+      <li>Mit einem Klick zwischen Nahansicht und ganzem Bild wechseln</li>
+      <li>Eingebauter Editor: Zuschneiden, Stift, Pfeil, Rahmen, Markieren, Weichzeichnen (Verpixeln) für private Details und Text, mit Rückgängig und Wiederholen</li>
       <li>Als PNG, JPG oder mehrseitiges PDF herunterladen oder in die Zwischenablage kopieren</li>
+      <li>Nach der Aufnahme: Editor öffnen, PNG sofort herunterladen oder in die Zwischenablage kopieren (Auswahl in den Einstellungen)</li>
+      <li>Dateinamen aus <code>{title}</code>, <code>{host}</code>, <code>{date}</code> und <code>{time}</code></li>
       <li>Oberfläche in 18 Sprachen</li>
     </ul>
   </section>
@@ -138,8 +146,8 @@ h2.caps{font-size:14px;letter-spacing:.08em;color:var(--muted);margin:0 0 6px}
   <section>
     <h2 class="caps">DATENSCHUTZ VON ANFANG AN</h2>
     <ul>
-      <li>Kostenlos, kein Konto, keine Anmeldung</li>
-      <li>Keine Analyse, kein Tracking</li>
+      <li>Kostenlos, ohne Konto, ohne Anmeldung</li>
+      <li>Keine Analysen, kein Tracking</li>
       <li>Screenshots und Bearbeitungen verlassen nie Ihren Browser</li>
       <li>Minimale Berechtigungen: nur der Tab, den Sie wählen, nur wenn Sie klicken</li>
     </ul>
@@ -149,7 +157,9 @@ h2.caps{font-size:14px;letter-spacing:.08em;color:var(--muted);margin:0 0 6px}
     <h2 class="caps">GUT ZU WISSEN</h2>
     <ul>
       <li>Browserseiten (Einstellungen, Erweiterungs-Stores) kann keine Erweiterung aufnehmen.</li>
-      <li>Extrem lange Seiten enden bei etwa 32.000 Pixeln, dem größten Bild, das Browser zeichnen können.</li>
+      <li>Extrem lange Seiten enden nach 3 Teilen (etwa 96.000 Pixel); Tidy sagt Ihnen, wenn eine Seite abgeschnitten wurde.</li>
+      <li>Mit „sofort herunterladen“ öffnet sich der Ergebnis-Tab kurz im Hintergrund und schließt sich dann selbst.</li>
+      <li>In Firefox kann das Kopieren direkt nach der Aufnahme einen Klick auf „Kopieren“ erfordern.</li>
     </ul>
   </section>
 
